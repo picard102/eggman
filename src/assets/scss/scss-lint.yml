@@ -26,12 +26,12 @@ linters:
     enabled: false
 
   ElsePlacement:
-    enabled: false
+    enabled: true
     style: same_line
 
   EmptyLineBetweenBlocks:
     enabled: true
-    ignore_single_line_blocks: true
+    ignore_single_line_blocks: false
 
   EmptyRule:
     enabled: true
@@ -115,8 +115,8 @@ linters:
     enabled: true
 
   SingleLinePerProperty:
-    enabled: true
-    allow_single_line_rule_sets: false
+    enabled: false
+    allow_single_line_rule_sets: true
 
   SingleLinePerSelector:
     enabled: true

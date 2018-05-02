@@ -1,4 +1,4 @@
-@include keyframes(fadeIn) {
+@keyframes(fadeIn) {
   from {
     opacity: 0;
   }
@@ -10,73 +10,73 @@
 }
 
 
-@include keyframes(sunBody) {
+@keyframes(sunBody) {
   0% {
-    @include transform(scale(.95) rotate(0deg));
+    transform: scale(.95) rotate(0deg);
   }
 
   50% {
-    @include transform(scale(1) rotate(180deg));
+    transform: scale(1) rotate(180deg);
   }
 
   100% {
-    @include transform(scale(.95) rotate(360deg));
+    transform: scale(.95) rotate(360deg);
   }
 
 }
 
-@include keyframes(sunEyes) {
+@keyframes(sunEyes) {
   0% {
-    @include transform(scale(.5) translateY(50px));
+    transform: scale(.5) translateY(50px);
   }
 
   6% {
-    @include transform(scale(1) translateY(-7px));
+    transform: scale(1) translateY(-7px);
   }
 
   9% {
-    @include transform(scale(1) translateY(0));
+    transform: scale(1) translateY(0);
   }
 
   98% {
-    @include transform(scale(1) translateY(0));
+    transform: scale(1) translateY(0);
   }
 
   98.5% {
-    @include transform(scale(1) translateY(0) rotateX(93deg));
+    transform: scale(1) translateY(0) rotateX(93deg);
   }
 
   100% {
-    @include transform(scale(1) translateY(0) rotateX(0));
+    transform: scale(1) translateY(0) rotateX(0);
   }
 
 
 }
 
-@include keyframes(sunPop) {
+@keyframes(sunPop) {
   0% {
-    @include transform(translateY(150px));
+    transform: translateY(150px);
   }
 
   100% {
-    @include transform(translateY(10px));
+    transform: translateY(10px);
   }
 
 }
 
 
 
-@include keyframes(loadingSpin) {
+@keyframes(loadingSpin) {
   0% {
-    @include transform(scale(.8) rotate(0deg));
+    transform: scale(.8) rotate(0deg);
   }
 
   50% {
-    @include transform(scale(1) rotate(180deg));
+    transform: scale(1) rotate(180deg);
   }
 
   100% {
-    @include transform(scale(.8) rotate(360deg));
+    transform: scale(.8) rotate(360deg);
   }
 
 }

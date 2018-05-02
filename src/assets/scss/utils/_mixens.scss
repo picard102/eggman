@@ -7,23 +7,23 @@
   @if $direction == vertical {
     position: $pos;
     top: 50%;
-    @include transform(translateY(-50%));
+    transform: translateY(-50%);
   }
   @if $direction == horizontal {
     position: $pos;
     left: 50%;
-    @include transform(translateX(-50%));
+    transform: translateX(-50%);
   }
-  @if $direction == center{
+  @if $direction == center {
     position: $pos;
     left: 50%;
     top: 50%;
-    @include transform(translateY(-50%) translateX(-50%));
+    transform: translateY(-50%) translateX(-50%);
   }
-  @if $direction == reset{
+  @if $direction == reset {
     position: $pos;
     left: auto; top: auto;
-    @include transform(translateY(auto) translateX(auto));
+    transform: translateY(auto) translateX(auto);
   }
 
 }
@@ -63,11 +63,13 @@
 //
 
 @mixin justifyed {
-  vertical-align: top;
+  //@include test;
   text-align: justify;
-  font-size: 0;
+  line-height: 0;
+  //font-size: 0.1px;
 
   &::after {
+    //@include test;
     content: '';
     display: inline-block;
     width: 100%;
@@ -85,7 +87,7 @@
 //
 
 @mixin linkcolor($value, $direction: darken, $hover: false) {
-  @include transition (all .2s ease-in-out);
+  transition: all .2s ease-in-out;
   @if $hover == false {
     @if $direction == darken {
       color: $value;
@@ -98,9 +100,6 @@
         color: darken($value, 25%);
       }
 
-      &:visited {
-        color: darken($value, 5%);
-      }
 
     }
     @if $direction == lighten {
@@ -114,9 +113,6 @@
         color: lighten($value, 25%);
       }
 
-      &:visited {
-        color: lighten($value, 5%);
-      }
 
     }
 
@@ -154,6 +150,79 @@
 
 
 
+
+
+@mixin dotsz ($color, $number, $size, $ab) {
+
+  @if $ab == ab {
+    &::after,
+    &::before {
+      @include size($size);
+      content: '';
+      position: absolute;
+      background-color: $color;
+      z-index: -1;
+    }
+
+    @for $i from 1 through $number {
+      &:nth-child(#{$i})::after,
+      &:nth-child(#{$i})::before {
+        bottom: #{random(100) + 0% };
+        right: #{random(100) + 0% };
+      }
+    }
+  }
+
+  @if $ab == a {
+    &::after {
+      @include size($size);
+      content: '';
+      position: absolute;
+      background-color: $color;
+      z-index: -1;
+    }
+
+    @for $i from 1 through $number {
+      &:nth-child(#{$i})::after {
+        bottom: #{random(100) + 0% };
+        right: #{random(100) + 0% };
+      }
+    }
+  }
+
+
+  @if $ab == b {
+    &::before {
+      @include size($size);
+      content: '';
+      position: absolute;
+      background-color: $color;
+      z-index: -1;
+    }
+
+    @for $i from 1 through $number {
+      &:nth-child(#{$i})::before {
+        top: #{random(100) + 0% };
+        left: #{random(100) + 0% };
+      }
+    }
+  }
+
+
+}
+
+
+
+
+@mixin mask($mask) {
+  @include prefixer(mask-image, $mask, webkit moz spec);
+}
+
+
+
+@mixin fontsize($size) {
+  font-size: map-get($ms, $size);
+}
 
 
 @mixin product($size:relative, $coverage:vertical) {

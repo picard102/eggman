@@ -1,45 +1,10 @@
 body {
-  @include transition (all .2s ease-in-out);
+  transition: all .2s ease-in-out;
   background-color: $white;
   color: $text;
   font-family: $sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased !important;
-
-
-  &::after {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    z-index: 10000;
-    display: block;
-
-    @include breakpoint($xs) {
-      content: 'xs';
-      background: $light-blue;
-    }
-
-    @include breakpoint($sm) {
-      content: 'sm';
-      background: $black;
-    }
-
-    @include breakpoint($md) {
-      content: 'md';
-      background: $dark-blue;
-    }
-
-    @include breakpoint($lg) {
-      content: 'lg';
-      background: $red;
-    }
-
-    @include breakpoint($xl) {
-      content: 'xl';
-      background: $dark-red;
-    }
-
-  }
 }
 
 .wrapper {
@@ -65,7 +30,7 @@ a {
 }
 
 %pill {
-  @include transition (all .2s ease-in-out);
+  transition: all .2s ease-in-out;
   display: inline-block;
   color: $white;
   background-color: $red;
@@ -114,12 +79,3 @@ a {
   }
 
 }
-
-
-
-
-
-
-
-
-

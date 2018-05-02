@@ -1,10 +1,15 @@
 <?php
-
-$twitter =  cmb2_get_option('eggman_options', 'twitter');
-$facebook =  cmb2_get_option('eggman_options', 'facebook');
-$instagram =  cmb2_get_option('eggman_options', 'instagram');
-$hashtag =  cmb2_get_option('eggman_options', 'hashtag');
-
+/**
+ * The template for displaying the Social section
+ *
+ * Displays all of the head element and everything up until the "site-content" div.
+ *
+ * @category PHP
+ * @package  @theme_folder@
+ * @author   @author_name@  <@author_email@>
+ * @version  Release: @package_version@
+ * @link     @git_link@
+ */
 ?>
 
 <section class='social'>
@@ -24,13 +29,13 @@ $hashtag =  cmb2_get_option('eggman_options', 'hashtag');
   </div>
 
   <div class="share">
-    <div class="wrapper"> 
+    <div class="wrapper">
       <?php if (!empty($hashtag)) { echo '<span class="hashtag">#'.$hashtag.'</span>'; } ?>
       <div class="accounts">
         <span>Follow the EggMan</span>
         <?php
           if (!empty($twitter)) {
-            echo '<a href="https://twitter.com/'.$twitter.'"><svg><use xlink:href="#twitter-icon"></use></svg></a>'; 
+            echo '<a href="https://twitter.com/'.$twitter.'"><svg><use xlink:href="#twitter-icon"></use></svg></a>';
           }
           if (!empty($facebook)) {
             echo '<a href="https://www.facebook.com/'.$facebook.'"><svg><use xlink:href="#facebook-icon"></use></svg></a>';

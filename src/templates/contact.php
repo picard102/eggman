@@ -1,26 +1,35 @@
-<?php 
-$general =  cmb2_get_option('eggman_options', 'general');
-$catering =  cmb2_get_option('eggman_options', 'catering');
+<?php
+/**
+ * The template for displaying the contact section
+ *
+ * Displays all of the head element and everything up until the "site-content" div.
+ *
+ * @category PHP
+ * @package  @theme_folder@
+ * @author   @author_name@  <@author_email@>
+ * @version  Release: @package_version@
+ * @link     @git_link@
+ */
 ?>
 
 <section class="contact">
 	<div class="wrapper">
-	
-	<div class="col_1">	
+
+	<div class="col_1">
 		<h1>Contact</h1>
 	</div>
 
 	<div class="cols">
 		<span>
 			<h2>Catering</h2>
-			<?php if (!empty($catering)) {
-            echo '<a href="mailto:'.$catering.'">'.$catering.'</a>';
+			<?php if (!empty($cateringContact)) {
+            echo '<a href="mailto:'.$cateringContact.'">'.$cateringContact.'</a>';
           	}?>
 		</span>
 		<span>
 			<h2>General</h2>
-			<?php if (!empty($general)) {
-            echo '<a href="mailto:'.$general.'">'.$general.'</a>';
+			<?php if (!empty($generalContact)) {
+            echo '<a href="mailto:'.$generalContact.'">'.$generalContact.'</a>';
           	}?>
 		</span>
 		<span>
@@ -41,4 +50,3 @@ $catering =  cmb2_get_option('eggman_options', 'catering');
 
 	</div>
 </section>
-
