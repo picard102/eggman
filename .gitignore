@@ -1,6 +1,7 @@
 .htaccess
 wp-config.php
 wp-content/
+/wp-content
 .DS_Store
 local-config.php
 /vendor
@@ -13,3 +14,5 @@ local-config.php
 /node_modules
 composer.lock
 .DS_Store
+/media
+/wp-content
