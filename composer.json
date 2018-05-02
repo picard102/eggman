@@ -1,0 +1,40 @@
+{
+    "name": "picard102/EGGMAN",
+    "description": "Setup Theme Dependancies",
+    "authors": [
+        {
+            "name": "John Leschinski",
+            "email": "picard102@gmail.com"
+        }
+    ],
+
+
+    "repositories": [{
+    "type": "package",
+    "package": {
+        "name": "JamesHeinrich/getID3",
+        "version": "0.1.0",
+        "source": {
+            "url": "https://github.com/JamesHeinrich/getID3",
+            "type": "git",
+        "reference": "v1.9.14"
+        }
+        }
+    }],
+
+
+  "require": {
+    "johnpbloch/wordpress": "4.6",
+    "composer/installers": "~1.0",
+    "webdevstudios/cmb2":"^2.2.1",
+    "oomphinc/composer-installers-extender": "^1.1",
+    "JamesHeinrich/getID3": "^0.1"
+  },
+  "extra": {
+    "wordpress-install-dir": "wp",
+    "installer-types": ["library"],
+    "installer-paths": {
+      "vendor/copy/{$name}/" : ["tgmpa/tgm-plugin-activation","webdevstudios/cmb2"]
+    }
+  }
+}
