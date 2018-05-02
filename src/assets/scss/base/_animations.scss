@@ -10,9 +10,9 @@
 }
 
 
-@keyframes(sunBody) {
+@keyframes sunBody {
   0% {
-    transform: scale(.95) rotate(0deg);
+    transform: scale(.95) rotate(0);
   }
 
   50% {
@@ -25,7 +25,7 @@
 
 }
 
-@keyframes(sunEyes) {
+@keyframes sunEyes {
   0% {
     transform: scale(.5) translateY(50px);
   }
@@ -53,20 +53,20 @@
 
 }
 
-@keyframes(sunPop) {
+@keyframes sunPop {
   0% {
     transform: translateY(150px);
   }
 
   100% {
-    transform: translateY(10px);
+    transform: translateY(0);
   }
 
 }
 
 
 
-@keyframes(loadingSpin) {
+@keyframes loadingSpin {
   0% {
     transform: scale(.8) rotate(0deg);
   }

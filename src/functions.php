@@ -36,9 +36,14 @@ if ( isset( $_SERVER['SERVER_NAME'] ) ) {
   require'includes/disable_core.php';
   require'includes/image_size.php';
 
+  require'includes/admin/theme-options.php';
+
   require'includes/staff/cpt_staff.php';
   require'includes/press/cpt_press.php';
   require'includes/testimonials/cpt_testimonial.php';
   require'includes/menu/cpt_items.php';
 
   require'includes/admin/adminCol.php';
+
+
+  require'includes/frontend/schedule.php';

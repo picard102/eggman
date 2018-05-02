@@ -24,12 +24,9 @@
   <title><?php wp_title( '|', true, 'right' ); ?></title>
 </head>
 <?php
-
 $hashtag = isset( get_option( 'eggman_options' )['footer'] ) ? get_option( 'eggman_options' )['footer'] : false;
-
 $generalContact = isset( get_option( 'eggman_options' )['general'] ) ? get_option( 'eggman_options' )['general'] : false;
 $cateringContact = isset( get_option( 'eggman_options' )['catering'] ) ? get_option( 'eggman_options' )['catering'] : false;
-
 $twitter = isset( get_option( 'eggman_options' )['twitter'] ) ? get_option( 'eggman_options' )['twitter'] : false;
 $facebook = isset( get_option( 'eggman_options' )['facebook'] ) ? get_option( 'eggman_options' )['facebook'] : false;
 $instagram = isset( get_option( 'eggman_options' )['instagram'] ) ? get_option( 'eggman_options' )['instagram'] : false;
@@ -38,9 +35,12 @@ $instagram = isset( get_option( 'eggman_options' )['instagram'] ) ? get_option( 
 <body <?php body_class(); ?>>
 
 <div class="sprite-hide">
-	<?php include("img/sprite.svg"); ?>
+  <?php include( get_stylesheet_directory() . '/assets/svg/svg-sprite.svg' ); ?>
 </div>
 
-<header class='site-header'>
-	<svg class='logo-main'><use xlink:href="#logo-type"></use></svg>
+<header class="site-header">
+  <div class="logo">
+	 <svg><use xlink:href="#logo-type"></use></svg>
+  </div>
 </header>
+

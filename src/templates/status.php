@@ -1,21 +1,19 @@
 
-<section class="status closed">
+<section class="status loading">
   <?php
       echo '<div class="status-icon">';
-      include(get_template_directory() .'/img/svg/compressed/sun-icon.svg');
+      include(get_template_directory() .'/assets/svg/icons/sun-icon.svg');
       echo '</div>';
   ?>
-  <p id='status-copy'> 
-     <span>Loading <div class="loading"><svg><use xlink:href="#egg-cross"></use></svg></div></span> 
-  </p>
 
-  <div class="controls">
+  <div class="status-bar">
 
-    <a href="#" id='schedule-trigger' class='schedule-trigger'>
-      <svg class="calendar-icon"><use xlink:href="#calendar-icon"></use></svg>
-      <span>See Future Schedule</span>
-    </a>
+    <div class="content">
+     <div class="egg-loading"><svg><use xlink:href="#egg-cross"></use></svg></div> Loading&hellip;
+    </div>
+
+    <div class="controls">
+    </div>
 
   </div>
-
 </section>

@@ -1,20 +1,39 @@
 .site-header {
-
-  background: url('img/raster/compressed/bar-bg.jpg');
-  background-size: cover;
-  background-position: center;
+  //@include test;
   text-align: center;
-  padding: 20px;
-  line-height: 0;
-  font-size: 0;
+  color: $brand;
+  width: 100%;
+  display: block;
+  padding-top: 70vh;
+  background-color: $dark-blue;
+  background-image: radial-gradient(ellipse at center, rgba($white, 0) 50%, rgba($white, 1) 70%), url('assets/img/truck.png');
+  background-size: 300% 200%, cover;
+  background-position: center bottom, center top;
+  background-repeat: no-repeat;
 
-  svg {
-    width: 247px;
-    height: 30px;
+  .logo {
+    background-image: radial-gradient(ellipse at center, rgba($white, 0) 20%, rgba($white, 1) 50%);
+    background-size: 300% 200%;
+    background-position: center bottom;
+    padding: 20px;
+    text-align: center;
 
-    @include breakpoint($md-up) {
-      height: 40px;
+    &::after {
+      //@include test;
+      display: block;
+      content: '';
+      max-width: 30%;
+      margin: 0 auto;
+      margin-top: 2vh;
+      border-top: 1px solid currentColor;
+      opacity: .2;
+    }
+
+    svg {
+      //@include test;
+      max-width: 80%;
+      height: 50px;
+      fill: currentColor;
     }
   }
-
 }

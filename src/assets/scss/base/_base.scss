@@ -1,5 +1,4 @@
 body {
-  transition: all .2s ease-in-out;
   background-color: $white;
   color: $text;
   font-family: $sans-serif;
@@ -8,7 +7,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1178px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
   position: relative;
@@ -42,21 +41,21 @@ a {
   text-transform: uppercase;
   position: relative;
 
-  .loading {
-    //@include test;
-    display: inline-block;
-    position: absolute;
-    //right: 15px;
-    margin-top: -2px;
-
-    svg {
-      @include size(18px);
-      @include transform-origin(center center);
-      @include animation(loadingSpin 700ms ease-in-out 50);
-      fill: currentColor;
-    }
-  } // Loading
 }
+
+
+
+.egg-loading {
+  //@include test;
+
+  svg {
+    //@include test;
+    animation-name: loadingSpin;
+    animation-duration: 1200ms;
+    animation-iteration-count: infinite;
+  }
+} // Loading
+
 
 %red-pill {
   color: $white;

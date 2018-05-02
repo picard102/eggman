@@ -1,253 +1,328 @@
 
 .status {
-  @include justifyed;
-  background-color: $yellow;
-  //border-top: solid 1px $white;
-  color: $light-blue;
-  padding: 0 18px;
-  position: relative;
+  //@include test;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
-
-  @include breakpoint($sm-down) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+  color: $white;
 
   a {
-    @include linkcolor($light-blue, darken);
+    color: currentColor;
+    text-decoration: none;
   }
 
-  .loading {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 12px;
+  svg {
+    @include size(18px);
+    fill: currentColor;
+  }
 
-    svg {
-      @include size(18px);
-      @include transform-origin(center center);
-      @include animation(loadingSpin 700ms ease-in-out 50);
-      fill: currentColor;
-    }
-  } // Loading
-
-
-
-//////// Open State
-  &.open {
-
-    @include breakpoint($md-up) {
-      padding: 0 24px 0 150px;
-    }
-
-    .status-icon {
-
-      @include breakpoint($sm-down) {
-        @include position(absolute, -47px -10px null null);
-        height: 48px;
-      }
-
-      @include breakpoint($md-up) {
-        @include position(absolute, null null 0 24px);
-        height: 65px;
-      }
-
-      svg {
-        fill: $yellow;
-
-        @include breakpoint($md-up) {
-          fill: $white;
-          opacity: .7;
-        }
-      }// svg
-
-    } //statusicon
-  } // open
-
-
-
-
-/////// Soon state
-
-  &.soon {
-    @include background(linear-gradient(-180deg, $yellow 0%, shade($yellow, 20%) 90%));
-
-    @include breakpoint($md-up) {
-      padding: 0 24px 0 150px;
-    }
-
-    .status-icon {
-
-      @include breakpoint($sm-down) {
-        @include position(absolute, -34px -10px null null);
-        height: 35px;
-      }
-
-      @include breakpoint($md-up) {
-        @include position(absolute, null null 0 24px);
-        height: 50px;
-      }
-
-      svg {
-        @include animation(sunPop 1.5s $ease-out-quint forwards);
-        fill: $yellow;
-
-        @include breakpoint($md-up) {
-          fill: $white;
-          opacity: .5;
-        }
-
-        path:last-child { display: none; }
-      }//svg
-    } //statusicon
-  } // soon
-
-
-
-
-
-
-/////// Closed State
-
-  &.closed {
-    background-color: $dark-blue;
-    color: $white;
-
-    @include breakpoint($md-up) {
-      padding: 0 24px;
-    }
-
-    .status-icon {
-      display: none;
-    }
-
-    a {
-      @include linkcolor($white, darken);
-    }
-
-  } // closed
-
-
-
-
-////// Defualt Icon State
-
-  .status-icon {
+  .status-bar {
     //@include test;
-    overflow: hidden;
-    pointer-events: none;
-
-    svg {
-      //@include test;
-      @include size(76px);
-      @include animation(sunPop 1s $ease-out-back forwards);
-      @include animation-delay(1s);
-      @include transform(translateY(100px));
-
-      @include breakpoint($md-up) {
-        @include size(100px);
-      }
-
-      path:first-child {
-        @include transform-origin(center center);
-        @include animation(sunBody 100s linear 50);
-      }
-
-      path:last-child {
-        @include transform-origin(center center);
-        @include transform(translateY(50px));
-        @include animation(sunEyes 4s linear forwards);
-        @include animation-delay(1.6s);
-      }
-    }
+    background-color: $brand;
+    position: relative;
+    z-index: 110;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
   }
 
-
-
-
-
-
-
-///////// Text Descriptor
-
-  p {
+  .content {
     //@include test;
-    font-weight: $medium;
-    font-size: 13px;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 9px 0;
-
-    @include breakpoint($md-up) {
-      font-size: 18px;
-    }
-
-    span {
-      display: block;
-      font-size: 10px;
-
-      @include breakpoint($md-up) {
-        font-size: 13px;
-      }
-    }
-
   }
 
+  .egg-loading {
+    display: inline-block;
+    margin-right: 3px;
+  }
 
-
-/////// Map / Future Icons
 
   .controls {
     //@include test;
-    display: inline-block;
-    vertical-align: middle;
-
-    svg {
-      @include size(15px);
-      vertical-align: middle;
-      fill: currentColor;
-
-      @include breakpoint($md-up) {
-        @include size(20px);
-        margin-top: -5px;
-      }
-    }
 
     a {
-      display: inline-block;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 19px;
-      padding: 10px;
-      vertical-align: middle;
+      //@include test;
+      @include size(44px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba($white, .2);
+    }
 
-      &:nth-child(2) {
-        position: relative;
-        margin-left: 12px;
-
-        &::before {
-          @include transform(translateY(-50%));
-          content: '';
-          height: 30%;
-          width: 1px;
-          opacity: .5;
-          border-left: 1px solid currentColor;
-          position: absolute;
-          left: -7px;
-          top: 50%;
-        }
-      }
+    svg {
+      //@include test;
+      display: block;
     }
 
     span {
-      margin-left: 12px;
+      display: none;
+    }
+  }
+}
 
-      @include breakpoint($sm-down) {
+
+.status-icon {
+  //@include test;
+  @include size(76px);
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  z-index: 10;
+
+  svg {
+    //@include test;
+    @include size(100%);
+    animation-name: sunPop;
+    animation-duration: 1000ms;
+    animation-timing-function: $ease-out-back;
+    fill: $yellow;
+
+    path:first-child {
+      transform-origin: center center;
+      animation-name: sunBody;
+      animation-duration: 100s;
+      animation-timing-function: linear;
+    }
+
+    path:last-child {
+      transform: translateY(150px);
+      transform-origin: center center;
+      animation-delay: 1000ms;
+      animation-name: sunEyes;
+      animation-duration: 800ms;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+
+.status.loading {
+
+  .status-icon {
+    display: none;
+  }
+
+}
+
+
+.status.open {
+
+  .status-bar {
+    color: $dark-blue;
+    background: $yellow;
+  }
+  //
+}
+
+
+
+.status.soon {
+
+  color: $dark-blue;
+
+  .status-icon {
+    bottom: 10%;
+
+    svg {
+      //@include test;
+      @include size(100%);
+      animation-name: sunPop;
+      animation-duration: 2000ms;
+      animation-timing-function: linear;
+      fill: $yellow;
+
+      path:first-child {
+        transform-origin: center center;
+        animation-name: sunBody;
+        animation-duration: 100s;
+        animation-timing-function: linear;
+      }
+
+      path:last-child {
         display: none;
       }
     }
+  }
 
-  } //controls
 
+  .status-bar {
+    background-color: $yellow;
+    background: linear-gradient(to bottom, $yellow 0%, shade($yellow, 10%) 100%);
+  }
+  //
 }
+
+
+.status.closed {
+
+  .status-icon {
+    display: none;
+  }
+
+  .status-bar {
+    color: $white;
+    background: $dark-blue;
+  }
+  //
+}
+
+
+
+// /////// Soon state
+
+//   &.soon {
+//     @include background(linear-gradient(-180deg, $yellow 0%, shade($yellow, 20%) 90%));
+
+//     @include breakpoint($md-up) {
+//       padding: 0 24px 0 150px;
+//     }
+
+//     .status-icon {
+
+//       @include breakpoint($sm-down) {
+//         @include position(absolute, -34px -10px null null);
+//         height: 35px;
+//       }
+
+//       @include breakpoint($md-up) {
+//         @include position(absolute, null null 0 24px);
+//         height: 50px;
+//       }
+
+//       svg {
+//         @include animation(sunPop 1.5s $ease-out-quint forwards);
+//         fill: $yellow;
+
+//         @include breakpoint($md-up) {
+//           fill: $white;
+//           opacity: .5;
+//         }
+
+//         path:last-child { display: none; }
+//       }//svg
+//     } //statusicon
+//   } // soon
+
+
+
+
+
+
+// /////// Closed State
+
+//   &.closed {
+//     background-color: $dark-blue;
+//     color: $white;
+
+//     @include breakpoint($md-up) {
+//       padding: 0 24px;
+//     }
+
+//     .status-icon {
+//       display: none;
+//     }
+
+//     a {
+//       @include linkcolor($white, darken);
+//     }
+
+//   } // closed
+
+
+
+
+// ////// Defualt Icon State
+
+
+
+
+
+
+// ///////// Text Descriptor
+
+//   p {
+//     //@include test;
+//     font-weight: $medium;
+//     font-size: 13px;
+//     display: inline-block;
+//     vertical-align: middle;
+//     margin: 9px 0;
+
+//     @include breakpoint($md-up) {
+//       font-size: 18px;
+//     }
+
+//     span {
+//       display: block;
+//       font-size: 10px;
+
+//       @include breakpoint($md-up) {
+//         font-size: 13px;
+//       }
+//     }
+
+//   }
+
+
+
+// /////// Map / Future Icons
+
+//   .controls {
+//     //@include test;
+//     display: inline-block;
+//     vertical-align: middle;
+
+//     svg {
+//       @include size(15px);
+//       vertical-align: middle;
+//       fill: currentColor;
+
+//       @include breakpoint($md-up) {
+//         @include size(20px);
+//         margin-top: -5px;
+//       }
+//     }
+
+//     a {
+//       display: inline-block;
+//       font-weight: 500;
+//       font-size: 14px;
+//       line-height: 19px;
+//       padding: 10px;
+//       vertical-align: middle;
+
+//       &:nth-child(2) {
+//         position: relative;
+//         margin-left: 12px;
+
+//         &::before {
+//           @include transform(translateY(-50%));
+//           content: '';
+//           height: 30%;
+//           width: 1px;
+//           opacity: .5;
+//           border-left: 1px solid currentColor;
+//           position: absolute;
+//           left: -7px;
+//           top: 50%;
+//         }
+//       }
+//     }
+
+//     span {
+//       margin-left: 12px;
+
+//       @include breakpoint($sm-down) {
+//         display: none;
+//       }
+//     }
+
+//   } //controls
+
+// }

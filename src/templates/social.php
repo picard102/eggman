@@ -16,11 +16,11 @@
   <div class='wrapper'>
 
 <div class="twitter-wrapper">
-<?php include( "social_twitter.php"); ?>
+<?php //include( "social_twitter.php"); ?>
 </div>
 
 <div class="instagram-wrapper">
-  <?php include( "social_insta.php"); ?>
+  <?php //include( "social_insta.php"); ?>
 </div>
 
 <div class="twitter-wrapper post">
