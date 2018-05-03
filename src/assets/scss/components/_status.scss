@@ -33,6 +33,9 @@
 
   .content {
     //@include test;
+    p {
+      margin: 0;
+    }
   }
 
   .egg-loading {
@@ -117,7 +120,7 @@
     color: $dark-blue;
     background: $yellow;
   }
-  //
+
 }
 
 
@@ -155,7 +158,7 @@
     background-color: $yellow;
     background: linear-gradient(to bottom, $yellow 0%, shade($yellow, 10%) 100%);
   }
-  //
+
 }
 
 
@@ -169,160 +172,18 @@
     color: $white;
     background: $dark-blue;
   }
-  //
+
 }
 
+.status.error {
 
+  .status-icon {
+    display: none;
+  }
 
-// /////// Soon state
+  .status-bar {
+    color: $white;
+    background: $dark-blue;
+  }
 
-//   &.soon {
-//     @include background(linear-gradient(-180deg, $yellow 0%, shade($yellow, 20%) 90%));
-
-//     @include breakpoint($md-up) {
-//       padding: 0 24px 0 150px;
-//     }
-
-//     .status-icon {
-
-//       @include breakpoint($sm-down) {
-//         @include position(absolute, -34px -10px null null);
-//         height: 35px;
-//       }
-
-//       @include breakpoint($md-up) {
-//         @include position(absolute, null null 0 24px);
-//         height: 50px;
-//       }
-
-//       svg {
-//         @include animation(sunPop 1.5s $ease-out-quint forwards);
-//         fill: $yellow;
-
-//         @include breakpoint($md-up) {
-//           fill: $white;
-//           opacity: .5;
-//         }
-
-//         path:last-child { display: none; }
-//       }//svg
-//     } //statusicon
-//   } // soon
-
-
-
-
-
-
-// /////// Closed State
-
-//   &.closed {
-//     background-color: $dark-blue;
-//     color: $white;
-
-//     @include breakpoint($md-up) {
-//       padding: 0 24px;
-//     }
-
-//     .status-icon {
-//       display: none;
-//     }
-
-//     a {
-//       @include linkcolor($white, darken);
-//     }
-
-//   } // closed
-
-
-
-
-// ////// Defualt Icon State
-
-
-
-
-
-
-// ///////// Text Descriptor
-
-//   p {
-//     //@include test;
-//     font-weight: $medium;
-//     font-size: 13px;
-//     display: inline-block;
-//     vertical-align: middle;
-//     margin: 9px 0;
-
-//     @include breakpoint($md-up) {
-//       font-size: 18px;
-//     }
-
-//     span {
-//       display: block;
-//       font-size: 10px;
-
-//       @include breakpoint($md-up) {
-//         font-size: 13px;
-//       }
-//     }
-
-//   }
-
-
-
-// /////// Map / Future Icons
-
-//   .controls {
-//     //@include test;
-//     display: inline-block;
-//     vertical-align: middle;
-
-//     svg {
-//       @include size(15px);
-//       vertical-align: middle;
-//       fill: currentColor;
-
-//       @include breakpoint($md-up) {
-//         @include size(20px);
-//         margin-top: -5px;
-//       }
-//     }
-
-//     a {
-//       display: inline-block;
-//       font-weight: 500;
-//       font-size: 14px;
-//       line-height: 19px;
-//       padding: 10px;
-//       vertical-align: middle;
-
-//       &:nth-child(2) {
-//         position: relative;
-//         margin-left: 12px;
-
-//         &::before {
-//           @include transform(translateY(-50%));
-//           content: '';
-//           height: 30%;
-//           width: 1px;
-//           opacity: .5;
-//           border-left: 1px solid currentColor;
-//           position: absolute;
-//           left: -7px;
-//           top: 50%;
-//         }
-//       }
-//     }
-
-//     span {
-//       margin-left: 12px;
-
-//       @include breakpoint($sm-down) {
-//         display: none;
-//       }
-//     }
-
-//   } //controls
-
-// }
+}

@@ -103,7 +103,8 @@ module.exports = function(grunt) {
         footer: '\n\n}); })(jQuery);'
       },
      dist: {
-        src: ['<%= pkg.path.srcpath %><%= pkg.path.js %>/frontend.js'],
+        src: ['<%= pkg.path.srcpath %><%= pkg.path.js %>/main.js',
+        '<%= pkg.path.srcpath %><%= pkg.path.js %>/frontend/status.js'],
         dest: '<%= pkg.path.buildpath %><%= pkg.name %>/built.js',
       },
       admin: {
