@@ -16,7 +16,7 @@ function schedule() {
 
 
 schedule();
-//setInterval(schedule, 60*60*5);
+setInterval(schedule, 60*60*5);
 
 
 /**
@@ -34,6 +34,7 @@ function process_status(data) {
   if (data == null) {
     console.log('error');
     $('.status .content').empty();
+    $('.status .controls').empty();
     $('.status').attr('class', 'status');
     $('.status').addClass('error');
     $('.status .content').html('<p>Error</p>');
@@ -58,6 +59,7 @@ function process_status(data) {
       var startHour = new Date(nextOpen).toLocaleTimeString(locale, {hour: '2-digit', minute:'2-digit'});
 
       $('.status .content').empty();
+      $('.status .controls').empty();
       $('.status').attr('class', 'status');
 
       if (nextOpen > currentTime ) {
