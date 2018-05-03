@@ -19,7 +19,6 @@
 require'templates/header.php';
 
 include'templates/slide_menu.php';
-require'templates/hero.php';
 require'templates/status.php';
 include'templates/about.php';
 require'templates/schedule.php';

@@ -40,7 +40,8 @@ $instagram = isset( get_option( 'eggman_options' )['instagram'] ) ? get_option( 
 
 <header class="site-header">
   <div class="logo">
-	 <svg><use xlink:href="#logo-type"></use></svg>
+    <h1>Toronto's First <span>(and only)</span> Breakfast Food Truck</h1>
+    <svg><use xlink:href="#logo-type"></use></svg>
   </div>
 </header>
 
