@@ -47,6 +47,13 @@ function items_metaboxes() {
     ) );
 
     $cmb->add_field( array(
+          'name' => 'Special',
+          'desc' => 'Special',
+          'id'   => $prefix.'special',
+          'type' => 'checkbox',
+    ) );
+
+    $cmb->add_field( array(
           'name'    => 'SubTitle',
           'desc'    => '',
           'id'      => $prefix.'sub',

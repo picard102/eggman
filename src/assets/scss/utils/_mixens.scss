@@ -226,7 +226,7 @@
 
 
 @mixin product($size:relative, $coverage:vertical) {
-  width: $size;
+
   padding-top: $size;
   height: 0;
   position: relative;

@@ -13,4 +13,5 @@
 
 //add_image_size( 'name', W, H, crop T/F or array( 'left', 'top' ) );
 
+add_image_size( 'menu_thumb', 500, 300, true );
 

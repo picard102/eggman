@@ -1,152 +1,106 @@
 
 .menu-section {
   //@include test;
-  padding: 18px 0 0;
-  max-width: 100%;
+  border-bottom: 1px solid $yellow;
 
-  h1 {
-    font-weight: 100;
-    color: $grey;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 2.2px;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-
-    @include breakpoint($sm-down) {
-      display: none;
-    }
-  }
-
-  .menu-wrap {
+  >h1 {
     //@include test;
-    max-width: 100%;
-    position: relative;
+    @include fontsize(0);
+    font-weight: $heavy;
+    text-align: center;
+    margin-bottom: 24px;
   }
 
   .menu {
     //@include test;
-    font-size: 0;
-    line-height: 0;
-    padding-bottom: 18px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+    //position: absolute;
+    overflow: hidden;
+    width: 100%;
   }
+
+
+  .products {
+    //@include test;
+    width: 100%;
+    white-space: nowrap;
+    top: 44px;
+    left: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-bottom: 2vh;
+    margin-bottom: -3vh;
+  }
+
+  ul {
+    //@include test;
+    @include listreset();
+    width: 100%;
+    display: inline-block;
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 20vw;
+    width: max-content;
+  }
+
 
   .item {
     //@include test;
-    @include transition (all .2s ease-in-out);
-    width: 100px;
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    margin: 0 6px;
+    transition: opacity 200ms cubic-bezier(.666, 0, .333, 1);
+    width: 40vw;
+    max-width: 170px;
     cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
     position: relative;
-
-
-    @include breakpoint($md-up) {
-      width: 130px;
-      margin: 0 12px;
-    }
-
-    &:first-of-type {
-      margin-left: 12px;
-
-      @include breakpoint($md-up) {
-        margin-left: 36px;
-      }
-
-    }
+    height: 100%;
+    white-space: normal;
+    display: inline-block;
+    flex: 0 0 auto;
+    margin: 0 24px;
+    opacity: .5;
 
     &:last-of-type {
-      margin-right: 12px;
-
-      @include breakpoint($md-up) {
-        margin-right: 36px;
-      }
+      margin-right: 20vw;
     }
 
-    &.active {
-      @include transform(scale(1.1));
+    &:hover {
+      opacity: 1;
     }
 
-
-    h2 {
-      font-weight: 500;
-      font-size: 12px;
-      color: $grey;
-      margin: 6px 0 0;
-      padding: 0;
-      line-height: 1em;
-
-      @include breakpoint($md-up) {
-        font-size: 14px;
-      }
+    &.special {
+      //width: 100%;
+      order: -1;
+      opacity: 1;
     }
 
-    .loading {
+    .image {
       //@include test;
-      @include position(absolute, 0 0);
-      background: rgba($white, .8);
+      width: 100%;
 
-      svg {
-        @include size(30px);
-        @include transform-origin(center center);
-        @include animation(loadingSpin 700ms ease-in-out 50);
-        fill: $light-blue;
-        top: 45px;
-        position: relative;
-
-        @include breakpoint($sm-down) {
-          top: 30px;
-        }
-
+      img {
+        display: block;
       }
+    }
 
-    } // Loading
+    h1 {
+      font-size: .85em;
+      font-weight: $book;
+      text-align: center;
+      letter-spacing: .07em;
 
+      small {
+        color: $dark-blue;
+        padding: .5em 1em;
+        border: 2px solid $yellow;
+        letter-spacing: .09em;
+        margin: 0 auto 3px;
+        display: table;
+        font-size: .7em;
+      }
+    }
   } //Item
 
-  .img-wrap {
-    @include product(95%, 95%);
-  }
-
 } // Menu Section
-
-
-.menu-arrow {
-  @include position(absolute, 0 null 0 null);
-  width: 45px;
-  pointer-events: none;
-
-  svg {
-    @include size(15px);
-    @include filter(drop-shadow(0 0 5px $white));
-    height: 100%;
-    vertical-align: middle;
-  }
-
-  &.left {
-    @include background-image(linear-gradient(left, $white 13%, transparent 100%));
-    left: 0;
-    direction: rtl;
-  }
-
-  &.right {
-    @include background-image(linear-gradient(right, $white 13%, transparent 100%));
-    right: 0;
-  }
-
-} // menuarrow
-
-
-.menu_target {
-  border-top: 1px solid $light-blue;
-  border-bottom: 1px solid $light-blue;
-}
 
 
 

@@ -38,6 +38,7 @@ $instagram = isset( get_option( 'eggman_options' )['instagram'] ) ? get_option( 
   <?php include( get_stylesheet_directory() . '/assets/svg/svg-sprite.svg' ); ?>
 </div>
 
+<div class="whole-wrap">
 <header class="site-header">
   <div class="logo">
     <h1>Toronto's First <span>(and only)</span> Breakfast Food Truck</h1>

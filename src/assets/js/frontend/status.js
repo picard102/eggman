@@ -14,10 +14,8 @@ function schedule() {
 
 }
 
-
 schedule();
 setInterval(schedule, 60*60*5);
-
 
 /**
  * Process Schedule

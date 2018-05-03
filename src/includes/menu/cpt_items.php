@@ -45,3 +45,4 @@ $slug = 'items';
 add_action( 'init', 'register_cpt_menu' );
 
 require 'meta.php';
+add_theme_support( 'post-thumbnails' ); 

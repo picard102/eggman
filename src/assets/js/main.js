@@ -1,4 +1,32 @@
 
+$.fn.hScroll = function (amount) {
+  amount = amount || 120;
+  $(this).bind("DOMMouseScroll mousewheel", function (event) {
+    var oEvent = event.originalEvent, 
+    direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+    position = $(this).scrollLeft();
+    position += direction > 0 ? -amount : amount;
+    $(this).scrollLeft(position);
+    event.preventDefault();
+  });
+};
+
+ $('#scroll').hScroll(60);
+
+
+
+
+$('.type-items').click(function() {
+  var postid = $(this).attr('data-postid');
+  console.log(postid);
+  var container = $("#menu-target").empty();
+
+
+$(container).prepend(postid);
+
+});
+
+
 
 // $('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");
 
@@ -102,10 +130,6 @@
 
 
 // // End Menu Ajax Call
-
-
-
-
 
 
 // //
