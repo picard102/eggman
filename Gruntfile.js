@@ -104,7 +104,8 @@ module.exports = function(grunt) {
       },
      dist: {
         src: ['<%= pkg.path.srcpath %><%= pkg.path.js %>/main.js',
-        '<%= pkg.path.srcpath %><%= pkg.path.js %>/frontend/status.js'],
+        '<%= pkg.path.srcpath %><%= pkg.path.js %>/frontend/status.js',
+        '<%= pkg.path.srcpath %><%= pkg.path.js %>/frontend/menu.js'],
         dest: '<%= pkg.path.buildpath %><%= pkg.name %>/built.js',
       },
       admin: {
