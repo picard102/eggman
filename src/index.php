@@ -17,9 +17,8 @@
  * Header Template
  */
 require'templates/header.php';
-
 include'templates/menu.php';
-//require'templates/status.php';
+require'templates/status.php';
 // include'templates/about.php';
 // require'templates/schedule.php';
 // require'templates/catering.php';

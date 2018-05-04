@@ -35,6 +35,7 @@ if ( isset( $_SERVER['SERVER_NAME'] ) ) {
   require'includes/theme_favicon.php';
   require'includes/disable_core.php';
   require'includes/image_size.php';
+  require'includes/upsize.php';
 
   require'includes/admin/theme-options.php';
 
@@ -47,3 +48,4 @@ if ( isset( $_SERVER['SERVER_NAME'] ) ) {
 
 
   require'includes/frontend/schedule.php';
+  require'includes/frontend/menu.php';

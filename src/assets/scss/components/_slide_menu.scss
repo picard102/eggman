@@ -67,6 +67,10 @@
       opacity: 1;
     }
 
+    &.active {
+      opacity: 1;
+    }
+
     &.special {
       //width: 100%;
       order: -1;
@@ -104,6 +108,27 @@
 
 
 
+.full-item {
+  @include test;
+  position: relative;
 
 
+  .close {
+    @include size(44px);
+    transition: all .2s ease-in-out;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+    color: $red;
+    z-index: 100;
+    border-radius: 30px;
+    padding: 12px;
 
+    svg {
+      @include size(100%);
+    }
+  }
+
+
+}

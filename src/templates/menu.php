@@ -4,11 +4,11 @@
   <div class="menu">
     <div class="products" id="scroll">
       <ul>
-  <?php 
+  <?php
     $args=array(
-      'posts_per_page'  =>  100, 
+      'posts_per_page'  =>  100,
       'post_type' =>  'items',
-      'orderby' => 'title', 
+      'orderby' => 'title',
       'order' => 'DESC',
       'meta_query' => array(
         array(
@@ -17,10 +17,10 @@
           'compare' => '=',
         )
       )
-    ); 
+    );
     query_posts($args);
-    if (have_posts()) : while (have_posts()) : the_post(); 
-    if ( has_post_thumbnail() ) { 
+    if (have_posts()) : while (have_posts()) : the_post();
+    if ( has_post_thumbnail() ) {
       $image_id = get_post_thumbnail_id($post->ID);
       $url = wp_get_attachment_image_src($image_id,'menu_thumb', true)[0];
       $special = isset( get_post_meta( $post->ID, 'items_special')[0] ) ?  ' special' : false ;
@@ -37,7 +37,6 @@
 </div>
 </section>
 
-<div id="menu-target">
+<div id="menu-target" class="full-item">
 
 </div>
-

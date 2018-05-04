@@ -2,8 +2,8 @@
 $.fn.hScroll = function (amount) {
   amount = amount || 120;
   $(this).bind("DOMMouseScroll mousewheel", function (event) {
-    var oEvent = event.originalEvent, 
-    direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+    var oEvent = event.originalEvent,
+    direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta,
     position = $(this).scrollLeft();
     position += direction > 0 ? -amount : amount;
     $(this).scrollLeft(position);
@@ -20,14 +20,39 @@ $('.type-items').click(function() {
   var postid = $(this).attr('data-postid');
   console.log(postid);
   var container = $("#menu-target").empty();
-
-
-$(container).prepend(postid);
-
+  $('.type-items').removeClass('active');
+  $(this).addClass('active');
+  menu_item(postid);
 });
 
+/**
+ * Function to get Schedule
+ *
+ */
+function menu_item(pid) {
+  var request = {
+    'action': 'menu_item',
+    'id': pid,
+  };
 
+  jQuery.post( ajaxurl, request, function(response){
+    console.log('Menu: ' + response);
+    process_item(response);
+  });
 
+}
+
+function process_item(data) {
+    data = $.parseJSON(data);
+    var container = $("#menu-target");
+    console.log(data);
+
+    $(container).prepend('<div class="close"><svg><use xlink:href="#icon-close"></use></svg></div>');
+    $(container).prepend('<div class="img-wrap"><img src="'+data.image+'"></div>');
+    $(container).prepend('<h1>'+data.title+'</h1>');
+    $(container).prepend('<div class="content">'+data.content+'</div>');
+
+}
 // $('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");
 
 
