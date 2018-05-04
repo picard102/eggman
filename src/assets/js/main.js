@@ -18,11 +18,17 @@ $.fn.hScroll = function (amount) {
 
 $('.type-items').click(function() {
   var postid = $(this).attr('data-postid');
-  console.log(postid);
-  var container = $("#menu-target").empty();
-  $('.type-items').removeClass('active');
-  $(this).addClass('active');
-  menu_item(postid);
+  var container = $("#menu-target");
+  if (!$(this).hasClass('active')) {
+    $(this).find('.image').append( '<div class="egg-loading"><svg><use xlink:href="#egg-cross"></use></svg></div>');
+    $('.type-items').removeClass('active');
+    $(container).empty();
+    $(this).addClass('active');
+    menu_item(postid);
+  } else {
+    $(this).removeClass('active');
+    $(container).slideUp();
+  }
 });
 
 /**
@@ -34,7 +40,6 @@ function menu_item(pid) {
     'action': 'menu_item',
     'id': pid,
   };
-
   jQuery.post( ajaxurl, request, function(response){
     console.log('Menu: ' + response);
     process_item(response);
@@ -46,13 +51,23 @@ function process_item(data) {
     data = $.parseJSON(data);
     var container = $("#menu-target");
     console.log(data);
-
-    $(container).prepend('<div class="close"><svg><use xlink:href="#icon-close"></use></svg></div>');
-    $(container).prepend('<div class="img-wrap"><img src="'+data.image+'"></div>');
-    $(container).prepend('<h1>'+data.title+'</h1>');
+    $(container).prepend('<div class="close-menu"><svg><use xlink:href="#icon-close"></use></svg></div>');
     $(container).prepend('<div class="content">'+data.content+'</div>');
-
+    $(container).prepend('<h1>'+data.title+'</h1>');
+    $(container).prepend('<div class="img-wrap"><img src="'+data.image+'"></div>');
+    $('.item.active').find('.egg-loading').remove();
+    $(container).slideDown();
 }
+
+$('body').on('click', '.close-menu', function() {
+  console.log('click');
+  $('.item.active').removeClass('active');
+  $("#menu-target").slideUp().removeClass('open');
+});
+
+
+
+
 // $('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");
 
 

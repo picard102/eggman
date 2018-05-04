@@ -80,6 +80,7 @@
     .image {
       //@include test;
       width: 100%;
+      position: relative;
 
       img {
         display: block;
@@ -102,6 +103,20 @@
         font-size: .7em;
       }
     }
+
+
+
+    .egg-loading {
+      @include position(absolute, 0 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        @include size(50%);
+        fill: $dark-blue;
+      }
+    }
   } //Item
 
 } // Menu Section
@@ -111,14 +126,16 @@
 .full-item {
   @include test;
   position: relative;
+  padding: 12px;
+  display: none;
 
 
-  .close {
+  .close-menu {
     @include size(44px);
     transition: all .2s ease-in-out;
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 0;
+    right: 0;
     cursor: pointer;
     color: $red;
     z-index: 100;
@@ -128,6 +145,13 @@
     svg {
       @include size(100%);
     }
+  }
+
+
+  h1 {
+    @include fontsize(0);
+    display: block;
+    text-align: center;
   }
 
 
