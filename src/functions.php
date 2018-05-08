@@ -43,6 +43,7 @@ if ( isset( $_SERVER['SERVER_NAME'] ) ) {
   require'includes/press/cpt_press.php';
   require'includes/testimonials/cpt_testimonial.php';
   require'includes/menu/cpt_items.php';
+  require'includes/social/cpt_social.php';
 
   require'includes/admin/adminCol.php';
 

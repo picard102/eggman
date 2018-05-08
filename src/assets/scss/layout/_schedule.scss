@@ -1,19 +1,39 @@
 
 
 .schedule {
-  @include test;
-  padding: 0 6px;
+  //@include test;
+  padding: 24px 12px;
+  background: $yellow;
+
+  h1 {
+    @include fontsize(1);
+    line-height: 1;
+    margin: 0;
+    margin-top: 12px;
+    text-align: center;
+    color: $white;
+  }
+
+  small {
+    font-size: .7em;
+    margin-bottom: 12px;
+    text-align: center;
+    display: block;
+    letter-spacing: .08em;
+    color: $white;
+  }
 
   dl {
     //@include test;
     @include listreset;
+    margin-bottom: 12px;
+    margin-top: 12px;
   }
 
   dt {
     //@include test;
     font-size: .8em;
     display: inline-block;
-    font-family: $header;
     font-weight: $book;
     position: relative;
     white-space: nowrap;
@@ -23,30 +43,39 @@
     color: $white;
     letter-spacing: .08em;
     bottom: -12px;
+    z-index: 10;
   }
 
   dd {
     //@include test;
     display: block;
     margin: 0;
-    display: flex;
-    justify-content: space-between;
+    //display: flex;
+    //justify-content: space-between;
+    background: $white;
     align-items: center;
     padding: 24px 12px;
     border: 1px solid $light-blue;
+    position: relative;
+    padding-right: calc(44px + 12px + 12px);
+  }
+
+  .sameday {
+    border-top: 0;
   }
 
   .time {
     font-size: .8em;
     margin-right: 12px;
     flex: 0 0 auto;
+    width: 100%;
 
-    span {
-      display: block;
-      font-size: .8em;
-      text-align: center;
-      letter-spacing: .08em;
-    }
+    // span {
+    //   display: block;
+    //   font-size: .8em;
+    //   text-align: center;
+    //   letter-spacing: .08em;
+    // }
   }
 
   .content {
@@ -61,7 +90,10 @@
 
 
   .controls {
-    @include test;
+    //@include test;
+    position: absolute;
+    right: 12px;
+    bottom: 24px;
 
     a {
       //@include test;
@@ -82,5 +114,3 @@
     }
   }
 }
-
-

@@ -19,12 +19,18 @@
 require'templates/header.php';
 include'templates/menu.php';
 require'templates/status.php';
-// include'templates/about.php';
+require'templates/social.php';
+//include'templates/about.php';
 require'templates/schedule.php';
 // require'templates/catering.php';
-// require'templates/social.php';
+
 // require'templates/media.php';
 // require'templates/contact.php';
+$tag = cmb2_get_option('eggman_options', 'hashtag');
+// queryInsta($tag);
+//queryInsta('theeggmaninc');
+
+ //queryTwitter('ebgames');
 ?>
 
 <?php

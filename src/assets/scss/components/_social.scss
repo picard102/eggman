@@ -1,137 +1,187 @@
 
+// scss-lint:disable all
+.social-stream {
+  background: $dark-blue;
+  padding: 10px;
+  display: grid;
+  //grid-auto-flow: row dense;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2vw;
 
-.social {
-  background-image: url('img/raster/compressed/social-bg.jpg');
-  padding: 18px 0 0;
 
 
-  >.wrapper {
+
+  a {
+    @include linkcolor($black, lighten);
+    text-decoration: none;
+    font-weight: $book;
+  }
+
+  p {
+    font-weight: $semi;
+  }
+
+
+// scss-lint:enable all
+  li {
     //@include test;
-    @include justifyed;
-  }
-
-
-  .instagram-wrapper {
-    @include justifyed;
-  }
-
-  .twitter-wrapper {
-    @include align-items(stretch);
-    @include display(flex);
-    @include flex-direction(row);
-    @include justify-content(space-between);
-    @include flex-flow(wrap);
-    //@include test;
-    font-size: 18px;
-
-    &.post {
-
-      @include break($max: 400px) {
-        display: none;
-      }
-    }
-  }
-
-  .social-post {
-    //@include flex(1);
-    position: relative;
+    background: $white;
+    border: 1px solid $yellow;
+    border-top-width: 2px;
     display: inline-block;
-    vertical-align: middle;
-    width: 15%;
-    border: solid 3px $white;
-    color: $white;
-    background-color: rgba(shade($red, 50%), .5);
-    margin-bottom: 2%;
+    padding: 12px;
+    //width: calc(100%/3 - 15px);
+    margin-bottom: 10px;
 
-    @include breakpoint($xs) {
-      width: 31.9%;
+
+    @include break($max: 1000px) {
+      width: calc(100%/2 - 15px);
     }
 
-    &:first-child {
-      margin-left: 0;
+    @include break($max: 700px) {
+      width: calc(100% - 20px);
     }
 
-    &:last-child {
-      margin-right: 0;
-    }
 
-    img {
-      vertical-align: middle;
-    }
+    &.social-twitter {
+      border-top-color: $twitter;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      grid-column: span 2;
 
-    svg {
-      @include size(14px);
-      margin-left: 6px;
-      vertical-align: middle;
-    }
-
-    &.instagram {
-      svg {
-        @include position(absolute, null 12px 12px null);
-      }
-    }
-
-    &.twitter {
-      width: 100%;
-      padding: 18px;
-      overflow: hidden;
-
-      @include breakpoint($md-up) {
-        width: 49%;
-      }
-
-
-      .media {
-        @include size(100px);
-        margin-right: 12px;
-      }
-
-      .twitter-avatar {
-        @include size(24px);
-        margin-right: 6px;
-      }
-
-      .twitter-user {
-        display: block;
-        margin-top: 18px;
-        font-size: 14px;
-      }
-
-      .twitter-link {
-        @include position(absolute, null 12px 19px null);
-        display: block;
-        font-size: 12px;
-      }
-
-      a {
-        @include linkcolor($white);
-      }
-
-      .twitter-content {
-        //@include test;
-        vertical-align: middle;
-        display: inline-block;
-        text-align: left;
-        margin: 0;
-        width: 100%;
+      .img_wrap {
+        width: 30%;
       }
 
       p {
-        font-size: 18px;
-        letter-spacing: .87px;
-        color: $white;
-        font-weight: $medium;
-        line-height: 20px;
-        display: block;
-        margin: 0;
+        width: calc(100% - 30% - 12px);
       }
 
-      &.hasmedia .twitter-content {
-        @include calc(width, '100% - 124px');
+      svg {
+        fill: $twitter;
       }
 
-    } //twitter
+      .user-info img {
+        border-radius: 100%;
+      }
+    }
 
-  } //social-post
+    &.social-instagram {
+      border-top-color: $instagram;
 
-} //social
+      @include break($max: 700px) {
+        &:nth-of-type(3) {
+          display: block !important;
+        }
+      }
+
+
+      svg {
+        fill: $instagram;
+      }
+
+      .user-info img {
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .img_wrap {
+    position: relative;
+    display: block;
+
+    svg {
+      @include alignment(absolute, center);
+      @include size(50%);
+      fill: $white;
+    }
+  }
+
+  .media {
+    width: 100%;
+    display: block;
+  }
+
+  .network {
+    margin-left: auto;
+
+    svg {
+      @include size(24px);
+    }
+  }
+
+  .user-info {
+    display: flex;
+    padding-top: 6px;
+    font-size: .8em;
+    width: 100%;
+
+    img {
+      @include size(32px);
+      flex: 0 0 auto;
+    }
+
+    span {
+      padding: 0 12px;
+    }
+
+    strong,
+    small {
+      display: block;
+    }
+  }
+
+}
+
+.tweet-quote {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: start;
+  border: 1px solid $yellow;
+  padding: 12px;
+  font-size: .8em;
+  margin: 6px;
+  opacity: .8;
+  margin-top: 12px;
+
+  .quote-user {
+    font-weight: $semi;
+  }
+
+  .image {
+    order: 0;
+    flex: 1 1 250px;
+    align-self: auto;
+    margin-right: 12px;
+  }
+
+  span {
+    flex: 1 1 auto;
+    order: 0;
+    flex: 3 1 auto;
+    align-self: auto;
+  }
+}
+
+.discover-more {
+  //@include test;
+  text-align: center;
+  margin-top: calc(-100px - 5vh);
+  position: relative;
+  z-index: 100;
+  background: linear-gradient(to top, rgba($white, 1) 1%, rgba($white, 1) 50%, rgba($white, 0) 100%);
+
+  a {
+    @include linkcolor($white);
+    text-decoration: none;
+    display: block;
+    background: $red;
+    padding: 24px;
+    border-radius: 5px;
+  }
+
+}
