@@ -4,15 +4,18 @@ body {
   font-family: $sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased !important;
+  background-image: url('assets/img/wood-bg.png');
+  background-attachment: fixed;
 }
 
 .whole-wrap {
-  @include test;
+  //@include test;
   max-width: 100vw;
   overflow: hidden;
   max-width: 1000px;
   margin: 0 auto;
   background: $white;
+  box-shadow: 0 0 5vw rgba($white, .9), 0 0 2vw rgba($black, .2);
 }
 
 .wrapper {
@@ -85,3 +88,20 @@ a {
   }
 
 }
+
+
+.cta-nav {
+  display: flex;
+}
+
+.about-cta {
+  @include test;
+  display: block;
+  width: 50%;
+  padding: 15vh 5vw;
+  background: $dark-blue;
+  color: $white;
+  text-align: right;
+}
+
+

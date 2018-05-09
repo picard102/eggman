@@ -19,7 +19,16 @@
 require'templates/header.php';
 include'templates/menu.php';
 require'templates/status.php';
-require'templates/social.php';
+?>
+
+<div class="cta-nav">
+<div class="about-cta"> About </div>
+<div class="about-cta"> About </div>
+</div>
+<div class="cta-content"></div>
+
+
+<?php
 //include'templates/about.php';
 require'templates/schedule.php';
 // require'templates/catering.php';
@@ -29,7 +38,7 @@ require'templates/schedule.php';
 $tag = cmb2_get_option('eggman_options', 'hashtag');
 // queryInsta($tag);
 //queryInsta('theeggmaninc');
-
+//require'templates/social.php';
  //queryTwitter('ebgames');
 ?>
 

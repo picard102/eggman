@@ -44,7 +44,7 @@ $content = str_replace(']]>', ']]&gt;', $content);
     $posts['money'] = get_post_meta( $pid, 'items_money', 'true' );
     $image_id = get_post_thumbnail_id($pid);
     $posts['image'] = wp_get_attachment_image_src($image_id,'post_card_large', true)[0];
-
+    $posts['special'] = isset( get_post_meta( $pid, 'items_special')[0] ) ?  ' special' : false ;
 
 
   $response = $posts;

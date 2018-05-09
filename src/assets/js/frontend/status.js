@@ -21,7 +21,7 @@ function schedule() {
 }
 
 schedule();
-setInterval(schedule, 60*60*1);
+setInterval(schedule, 60*60*5);
 
 
 
@@ -102,7 +102,7 @@ function process_status(data) {
     } else {
       console.log('Closed');
       $('.status').addClass('closed');
-      $('.status .content').html('<p>Currently Closed</p> <small>Open next '+nextWeekday+' '+nextMonth+' '+nextDay + ordinal(nextDay)+' </small>');
+      $('.status .content').html('<p>Currently Closed</p> <small>Open again on '+nextWeekday+' '+nextMonth+' '+nextDay + ordinal(nextDay)+' </small>');
       $('.status .controls').prepend('<a href="#" id="schedule-trigger"><svg><use xlink:href="#calendar-icon"></use></svg><span>See Future Schedule</span></a>');
     }
 
@@ -173,7 +173,7 @@ function process_schedule(data) {
     }
   } else {
     $('.schedule dl').empty();
-    $('.schedule dl').append('<div class="no-schedule">This Weeks Schedule Will Be Posted Shortly.</div>');
+    $('.schedule dl').append('<div class="no-schedule">This weeks schedule will be posted shortly.</div>');
   }
 }
 

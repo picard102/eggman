@@ -1,7 +1,7 @@
 
 .menu-section {
   //@include test;
-  border-bottom: 1px solid $yellow;
+  //border-bottom: 1px solid $yellow;
 
   >h1 {
     //@include test;
@@ -125,23 +125,23 @@
 
 
 .full-item {
-  @include test;
+  //@include test;
   position: relative;
   padding: 12px;
   display: none;
-
 
   .close-menu {
     @include size(44px);
     transition: all .2s ease-in-out;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 12px;
+    right: 12px;
     cursor: pointer;
     color: $red;
     z-index: 100;
     border-radius: 30px;
     padding: 12px;
+    fill: currentColor;
 
     svg {
       @include size(100%);
@@ -150,10 +150,49 @@
 
 
   h1 {
-    @include fontsize(0);
+    @include fontsize(1);
     display: block;
-    text-align: center;
+    text-align: left;
+    color: $dark-blue;
+    margin-bottom: 0;
   }
+
+
+
+
+  .wrap {
+    //@include test;
+    background: $white;
+    padding: 12px;
+
+    border-top: 1px solid $yellow;
+
+
+    @include break($min: 750px) {
+      padding: 24px;
+      display: grid;
+      grid-column-gap: 24px;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: max-content;
+    }
+  }
+
+  .img-wrap {
+    grid-row: 1 / span 3;
+
+  }
+
+  small {
+    color: $dark-blue;
+    padding: .5em 1em;
+    border: 2px solid $yellow;
+    letter-spacing: .09em;
+    margin: 0;
+    display: table;
+    font-size: .7em;
+  }
+
+
 
 
 }

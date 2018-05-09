@@ -61,9 +61,14 @@ function process_item(data) {
     $(container).empty();
     console.log(data);
     $(container).prepend('<div class="close-menu"><svg><use xlink:href="#icon-close"></use></svg></div>');
-    $(container).prepend('<div class="content">'+data.content+'</div>');
-    $(container).prepend('<h1>'+data.title+'</h1>');
-    $(container).prepend('<div class="img-wrap"><img src="'+data.image+'"></div>');
+    $(container).prepend('<div class="wrap"></div>');
+    $(container).find('.wrap').prepend('<div class="content">'+data.content+'</div>');
+    $(container).find('.wrap').prepend('<header><h1>'+data.title+'</h1></header>');
+    if (data.special) {
+      $(container).find('.wrap header').prepend('<small>Today\'s Special</small>');
+    }
+    $(container).find('.wrap').prepend('<div class="img-wrap"><img src="'+data.image+'"></div>');
+
     $('.item.active').find('.egg-loading').remove();
     $(container).slideDown();
 }
