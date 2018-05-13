@@ -29,6 +29,9 @@ $('.type-items').click(function() {
     $('.type-items').removeClass('active');
     $(this).addClass('active');
     menu_item(postid);
+    $('html, body').animate({
+        scrollTop: $(".menu-section").offset().top
+    }, 700);
   } else {
     $(this).removeClass('active');
     $(container).slideUp();
