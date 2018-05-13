@@ -19,33 +19,19 @@ add_action('wp_ajax_menu_item', 'menu_item');
 
 function get_item($pid) {
 
+  $posts['title'] = get_the_title($pid);
+  $posts['sub'] = get_post_meta( $pid, 'items_sub', 'true' );
 
-    // // query_posts('p='.$pid.'&post_type=items');
-    // // if (have_posts()) : while (have_posts()) : the_post();
+  $content_post = get_post($pid);
+  $content = $content_post->post_content;
+  $content = apply_filters('the_content', $content);
+  $content = str_replace(']]>', ']]&gt;', $content);
+  $posts['content'] = $content;
 
-
-    $posts['title'] = get_the_title($pid);
-    $posts['sub'] = get_post_meta( $pid, 'items_sub', 'true' );
-
-    $content_post = get_post($pid);
-$content = $content_post->post_content;
-$content = apply_filters('the_content', $content);
-$content = str_replace(']]>', ']]&gt;', $content);
-    $posts['content'] = $content;
-
-    $posts['price_large'] = get_post_meta( $pid, 'items_price_lrg', 'true' );
-    $posts['price_small'] = get_post_meta( $pid, 'items_price_reg', 'true' );
-    $posts['based'] = get_post_meta( $pid, 'items_base', 'true' );
-    $posts['sodium'] = get_post_meta( $pid, 'items_sodium', 'true' );
-    $posts['fat'] = get_post_meta( $pid, 'items_fat', 'true' );
-
-    $posts['carb'] = get_post_meta( $pid, 'items_carb', 'true' );
-    $posts['cal'] = get_post_meta( $pid, 'items_cal', 'true' );
-    $posts['money'] = get_post_meta( $pid, 'items_money', 'true' );
-    $image_id = get_post_thumbnail_id($pid);
-    $posts['image'] = wp_get_attachment_image_src($image_id,'post_card_large', true)[0];
-    $posts['special'] = isset( get_post_meta( $pid, 'items_special')[0] ) ?  ' special' : false ;
-
+  $posts['special'] = isset( get_post_meta( $pid, 'items_special')[0] ) ?  ' special' : false ;
+  $posts['price_large'] = get_post_meta( $pid, 'items_price_lrg', 'true' );
+  $posts['price_small'] = get_post_meta( $pid, 'items_price_reg', 'true' );
+  $posts['image'] = wp_get_attachment_image_src( get_post_meta( $pid, 'items_money_id', 1 ), 'menu_large' )[0];
 
   $response = $posts;
   return $response;

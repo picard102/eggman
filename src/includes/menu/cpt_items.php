@@ -30,19 +30,19 @@ $slug = 'items';
     'view_item'     => __( 'View '.$singularname ),
     'search_items'  => __( 'Search '.$pluralname ),
   );
-    
+
   $args = array(
     'labels'        => $labels,
     'description'   => 'profile',
     'public'        => true,
     'hierarchical' => false,
     'menu_icon'   => 'dashicons-carrot',
-    'supports'      => array( 'title', 'editor', 'thumbnail', 'custom-fields'),
+    'supports'      => array( 'title', 'editor', 'custom-fields'),
     'has_archive'   => false
   );
-  register_post_type( 'items', $args ); 
+  register_post_type( 'items', $args );
 }
 add_action( 'init', 'register_cpt_menu' );
 
 require 'meta.php';
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );

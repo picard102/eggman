@@ -15,15 +15,17 @@
           'key'     => 'items_show',
           'value'   => 'on',
           'compare' => '=',
+        ),
+        array(
+          'key'     => 'items_thumb',
+          'compare' => 'EXISTS',
         )
       )
     );
     query_posts($args);
     if (have_posts()) : while (have_posts()) : the_post();
-    if ( has_post_thumbnail() ) {
-      $image_id = get_post_thumbnail_id($post->ID);
-      $url = wp_get_attachment_image_src($image_id,'menu_thumb', true)[0];
-      $special = isset( get_post_meta( $post->ID, 'items_special')[0] ) ?  ' special' : false ;
+    $url = wp_get_attachment_image_src( get_post_meta( $post->ID, 'items_thumb_id', 1 ), 'menu_thumb' )[0];
+    $special = isset( get_post_meta( $post->ID, 'items_special')[0] ) ?  ' special' : false ;
     ?>
     <li <?php post_class('item'.$special); ?> id="post-<?php the_ID(); ?>" data-postid="<?php the_ID(); ?>">
       <div class="image"><img src="<?php echo $url ?>"></div>
@@ -31,7 +33,7 @@
         echo '<small>Today\'s Special</small>';
       }?><?php the_title();?></h1>
     </li>
-    <?php } endwhile; endif; wp_reset_query(); ?>
+    <?php  endwhile; endif; wp_reset_query(); ?>
   </ul>
   </div>
 </div>

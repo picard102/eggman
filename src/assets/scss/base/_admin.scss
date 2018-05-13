@@ -1,0 +1,17 @@
+
+.wp-list-table {
+
+  .image,
+  .image2 {
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .column-active,
+  .column-special {
+    width: 50px;
+    text-align: center;
+  }
+}

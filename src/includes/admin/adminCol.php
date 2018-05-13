@@ -33,15 +33,17 @@ global $post;
 switch ( $column ) {
 
   case 'image':
-    $post_meta_data = get_post_custom( $post->ID );
-    $custom_image   = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $size = 'thumbnail', $icon = false )[0];
-    echo '<img src="'.$custom_image.'"/>';
+    $custom_image = isset( get_post_meta( $post->ID, 'items_thumb')[0] ) ?  get_post_meta( $post->ID, 'items_thumb_id') : false ;
+    if ($custom_image) {
+      $custom_image = wp_get_attachment_image_src( $custom_image[0], 'menu_thumb')[0];
+      echo '<img src="'.$custom_image.'"/>';
+    }
   break;
 
   case 'image2':
     $custom_image = isset( get_post_meta( $post->ID, 'items_money')[0] ) ?  get_post_meta( $post->ID, 'items_money_id') : false ;
     if ($custom_image) {
-      $custom_image = wp_get_attachment_image_src( $custom_image[0], 'thumbnail')[0];
+      $custom_image = wp_get_attachment_image_src( $custom_image[0], 'menu_thumb')[0];
       echo '<img src="'.$custom_image.'"/>';
     }
   break;

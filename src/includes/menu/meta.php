@@ -71,6 +71,18 @@ function items_metaboxes() {
           'id'      => $prefix.'price_lrg',
           'type'    => 'text_money'
     ) );
+
+    $cmb->add_field( array(
+      'name'    => 'Menu Thumbnail',
+          'desc'    => 'Upload an image or enter an URL.',
+          'id'      => $prefix.'thumb',
+          'type'    => 'file',
+          // Optionally hide the text input for the url:
+          'options' => array(
+              'url' => false,
+          ),
+    ) );
+
     $cmb->add_field( array(
  'name'    => 'Money Shot',
           'desc'    => 'Upload an image or enter an URL.',
@@ -86,4 +98,3 @@ function items_metaboxes() {
 }
 
 add_action( 'cmb2_init', 'items_metaboxes' );
-
