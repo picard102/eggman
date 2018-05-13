@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"current",
+				"currentTime"
+			],
+			[
+				"curr",
+				"currentTime"
+			],
+			[
+				"cur",
+				"currentTime"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
 				"mes",
 				"message_log_reason"
 			],
@@ -136,7 +152,7 @@
 				"Package Control: Install Package"
 			],
 			[
-				"Package Control: Insta	",
+				"Package Control: Insta\t",
 				"Package Control: Install Package"
 			],
 			[
@@ -165,10 +181,37 @@
 	},
 	"expanded_folders":
 	[
-		"/Applications/MAMP/htdocs/eggman"
+		"/Applications/MAMP/htdocs/eggman/src",
+		"/Applications/MAMP/htdocs/eggman/src/assets",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/base",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/components"
 	],
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/components/_status.scss",
+		"/Applications/MAMP/htdocs/eggman/src/assets/js/frontend/status.js",
+		"/Applications/MAMP/htdocs/eggman/src/templates/social.php",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/components/_social.scss",
+		"/Applications/MAMP/htdocs/eggman/src/index.php",
+		"/Applications/MAMP/htdocs/eggman/src/includes/social/get_tweets.php",
+		"/Applications/MAMP/htdocs/eggman/src/includes/social/add_social.php",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/utils/_variables.scss",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/style.scss",
+		"/Applications/MAMP/htdocs/eggman/src/includes/social/cpt_social.php",
+		"/Applications/MAMP/htdocs/eggman/src/functions.php",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/layout/_schedule.scss",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/components/_slide_menu.scss",
+		"/Applications/MAMP/htdocs/eggman/src/templates/schedule.php",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/components/_share.scss",
+		"/Applications/MAMP/htdocs/eggman/src/templates/menu.php",
+		"/Applications/MAMP/htdocs/eggman/src/assets/js/main.js",
+		"/Applications/MAMP/htdocs/eggman/src/includes/frontend/menu.php",
+		"/Applications/MAMP/htdocs/eggman/src/includes/admin/adminCol.php",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/admin.scss",
+		"/Applications/MAMP/htdocs/eggman/src/assets/scss/base/_admin.scss",
+		"/Applications/MAMP/htdocs/eggman/src/includes/frontend/_menu_function.php",
+		"/Applications/MAMP/htdocs/eggman/src/includes/upsize.php",
 		"/Applications/MAMP/htdocs/base.css",
 		"/Users/johnleschinski/Desktop/PCTO/2014/Brand Kit/logo_mark.svg",
 		"/Applications/MAMP/htdocs/podcamp/wp-content/themes/PCTO_2016/_inc/sessions/_speakers.php",
@@ -248,7 +291,7 @@
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
@@ -263,6 +306,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"currentTime",
+			"register_cpt_staff",
 			"session",
 			"Session",
 			"Sessions",
@@ -336,7 +381,7 @@
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 68.0
 	},
 	"layout":
 	{
@@ -361,6 +406,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
 	"output.exec":
 	{
 		"height": 243.0
