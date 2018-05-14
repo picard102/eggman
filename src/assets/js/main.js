@@ -2,6 +2,20 @@
 
 
 
+
+
+
+
+
+$('.cta-nav [class$="-cta"]').click(function() {
+  console.log('click');
+  $(this).addClass('active');
+
+  $(this).parent().find('div').show();
+
+});
+
+
 // $('.twitter-wrapper .twitter:last-child').prev('div').andSelf().appendTo(".twitter-wrapper.post");
 
 

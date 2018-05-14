@@ -22,15 +22,25 @@ require'templates/status.php';
 ?>
 
 <div class="cta-nav">
-<div class="about-cta"> About </div>
-<div class="about-cta"> About </div>
+
+<div class="about-grid">
+  <div class="about-cta"> About </div>
+  <div class="about-content">Hi</div>
 </div>
-<div class="cta-content"></div>
+
+<div class="schedule-grid">
+  <div class="schedule-cta"> About </div>
+  <div class="schedule-content"><?php require'templates/schedule.php'; ?></div>
+</div>
+
+
+</div>
+
 
 
 <?php
 //include'templates/about.php';
-require'templates/schedule.php';
+//require'templates/schedule.php';
 // require'templates/catering.php';
 
 // require'templates/media.php';

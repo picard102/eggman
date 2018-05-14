@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased !important;
   background-image: url('assets/img/wood-bg.png');
   background-attachment: fixed;
+  padding-bottom: 60px;
 }
 
 .whole-wrap {
@@ -92,17 +93,42 @@ a {
 
 .cta-nav {
   display: flex;
+
+  [class$="-grid"] {
+    //@include test;
+    width: 50%;
+    position: relative;
+  }
+
+
+
+  [class$="-cta"] {
+    //@include test;
+    display: block;
+    width: 100%;
+    padding: 15vh 5vw;
+    background: $yellow;
+    color: $white;
+    text-align: right;
+    background-image: url('assets/img/truck.png');
+    cursor: pointer;
+  }
+
+  [class$="-content"] {
+    //@include test;
+    background: $black;
+    height: 100vh;
+    z-index: 10;
+    width: 200%;
+    position: relative;
+    display: none;
+  }
+
+
 }
 
-.about-cta {
-  @include test;
-  display: block;
-  width: 50%;
-  padding: 15vh 5vw;
-  background: $dark-blue;
-  color: $white;
-  text-align: right;
-}
+
+
 
 @function arrow($fillcolor) {
   $color: $fillcolor;
@@ -120,5 +146,3 @@ a {
 .controls a.maplink {
   @include arrow();
 }
-
-// background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='720px' height='720px' viewBox='0 0 720 720' enable-background='new 0 0 720 720' xml:space='preserve'%3e%3cpath d='M1250.758-546.806c-11.715-11.716-30.711-11.716-42.426,0l-704.81,704.808l-605.797-605.798 c-11.716-11.716-30.711-11.716-42.427,0c-11.715,11.716-11.715,30.711,0,42.427l605.798,605.797l-162.03,162.031L17.764,81.155 c-11.716-11.716-30.711-11.716-42.427,0s-11.716,30.711,0,42.427L131.445,279.69l-498.262,498.263 c-11.715,11.716-11.715,30.71,0,42.426c5.858,5.858,13.536,8.787,21.213,8.787s15.355-2.929,21.213-8.787l498.262-498.262 l225.043,225.042l-502.711,502.711c-11.716,11.716-11.716,30.71,0,42.426c5.858,5.858,13.536,8.787,21.213,8.787 s15.355-2.929,21.213-8.787l502.71-502.711l155.871,155.871c5.857,5.858,13.535,8.787,21.213,8.787s15.355-2.929,21.213-8.787 c11.716-11.716,11.716-30.71,0-42.426L341.493,404.885l909.265-909.264C1262.474-516.095,1262.474-535.09,1250.758-546.806z'/%3e%3c/svg%3e ");
