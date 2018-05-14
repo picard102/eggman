@@ -24,18 +24,21 @@ $('#scroll').hScroll(60);
 $('.type-items').click(function() {
   var postid = $(this).attr('data-postid');
   var container = $("#menu-target");
+
+  if (!$(this).siblings().hasClass('active') &&  !$(this).hasClass('active') ){
+    $('html, body').animate({ scrollTop: $(".menu-section").offset().top }, 700);
+  }
+
   if (!$(this).hasClass('active')) {
     $(this).find('.image').append( '<div class="egg-loading"><svg><use xlink:href="#egg-cross"></use></svg></div>');
     $('.type-items').removeClass('active');
     $(this).addClass('active');
     menu_item(postid);
-    $('html, body').animate({
-        scrollTop: $(".menu-section").offset().top
-    }, 700);
   } else {
     $(this).removeClass('active');
     $(container).slideUp();
   }
+
 });
 
 /**
@@ -48,7 +51,7 @@ function menu_item(pid) {
     'id': pid,
   };
   jQuery.post( ajaxurl, request, function(response){
-    console.log('Menu: ' + response);
+    //console.log('Menu: ' + response);
     process_item(response);
   });
 
@@ -65,10 +68,11 @@ function process_item(data) {
     console.log(data);
     $(container).prepend('<div class="close-menu"><svg><use xlink:href="#icon-close"></use></svg></div>');
     $(container).prepend('<div class="wrap"></div>');
-    $(container).find('.wrap').prepend('<div class="content">'+data.content+'</div>');
-    $(container).find('.wrap').prepend('<header><h1>'+data.title+'</h1></header>');
+    $(container).find('.wrap').prepend('<div class="cblock"></div>');
+    $(container).find('.cblock').prepend('<div class="content">'+data.content+'</div>');
+    $(container).find('.cblock').prepend('<header><h1>'+data.title+'</h1></header>');
     if (data.special) {
-      $(container).find('.wrap header').prepend('<small>Today\'s Special</small>');
+      $(container).find('.cblock header').prepend('<small>Today\'s Special</small>');
     }
     $(container).find('.wrap').prepend('<div class="img-wrap"><img src="'+data.image+'"></div>');
 

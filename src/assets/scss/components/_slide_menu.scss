@@ -127,7 +127,6 @@
 .full-item {
   //@include test;
   position: relative;
-  padding: 12px;
   display: none;
 
   .close-menu {
@@ -153,7 +152,7 @@
     @include fontsize(1);
     display: block;
     text-align: left;
-    color: $dark-blue;
+    color: $light-blue;
     margin-bottom: 0;
   }
 
@@ -162,37 +161,59 @@
 
   .wrap {
     //@include test;
-    background: $white;
-    padding: 12px;
+    background: $yellow;
 
-    border-top: 1px solid $yellow;
+    color: $light-blue;
 
 
     @include break($min: 750px) {
-      padding: 24px;
-      display: grid;
-      grid-column-gap: 24px;
-      grid-template-columns: 50% 50%;
-      grid-template-rows: max-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
+
+  .cblock {
+    //@include test;
+    padding: 12px 18px 24px;
+    width: 100%;
+
+
+    @include break($min: 750px) {
+      width: 50%;
+      padding: 0 48px;
+    }
+
+  }
+
   .img-wrap {
-    grid-row: 1 / span 3;
+    //@include test;
+    width: 100%;
+    background: $white;
+    object-fit: cover;
+    justify-content: flex-end;
+
+    @include break($min: 750px) {
+      width: 50%;
+    }
+
+    img {
+      display: block;
+      object-fit: cover;
+    }
 
   }
 
   small {
     color: $dark-blue;
     padding: .5em 1em;
-    border: 2px solid $yellow;
+    border: 2px solid $light-blue;
     letter-spacing: .09em;
     margin: 0;
     display: table;
     font-size: .7em;
   }
-
-
 
 
 }
