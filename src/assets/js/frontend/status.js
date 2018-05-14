@@ -92,18 +92,18 @@ function process_status(data) {
       console.log('Soon');
       $('.status').addClass('soon');
       $('.status .content').html('<p>Opening Soon at '+startHour+'</p> <small>'+address+' </small>');
-      $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
+      $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'" class="maplink"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
 
     } else if ( currentTime > nextOpen && currentTime < nextClose ) {
       console.log('Open Now');
       $('.status').addClass('open');
       $('.status .content').html('<p>Open Now Till '+endHour+'</p> <small>'+address+' </small>');
-      $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
+      $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'" class="maplink"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
     } else {
       console.log('Closed');
       $('.status').addClass('closed');
       $('.status .content').html('<p>Currently Closed</p> <small>Open again on '+nextWeekday+' '+nextMonth+' '+nextDay + ordinal(nextDay)+' </small>');
-      $('.status .controls').prepend('<a href="#" id="schedule-trigger"><svg><use xlink:href="#calendar-icon"></use></svg><span>See Future Schedule</span></a>');
+      $('.status .controls').prepend('<a href="#" id="schedule-trigger"><svg><use xlink:href="#calendar-icon"></use></svg><span>See Schedule</span></a>');
     }
 
   } else {
@@ -159,13 +159,13 @@ function process_schedule(data) {
         html += '<dd>';
           html += '<div class="time">'+startHour+' <span>till</span> '+endHour+'</div>';
           html += '<div class="content">'+data.open[i].display+'</div>';
-          html += '<div class="controls"><a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg> <span>View on Google Maps</span> </a></div>';
+          html += '<div class="controls"><a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'" class="maplink"><svg><use xlink:href="#maps-icon"></use></svg> <span>View on Google Maps</span> </a></div>';
         html += '</dd>';
       } else {
         html += '<dd class="sameday">';
           html += '<div class="time">'+startHour+' <span>till</span> '+endHour+'</div>';
           html += '<div class="content">'+data.open[i].display+'</div>';
-          html += '<div class="controls"><a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'"><svg><use xlink:href="#maps-icon"></use></svg> <span>View on Google Maps</span> </a></div>';
+          html += '<div class="controls"><a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'" class="maplink"><svg><use xlink:href="#maps-icon"></use></svg> <span>View on Google Maps</span> </a></div>';
         html += '</dd>';
       }
       $('.schedule dl').append(html);

@@ -56,15 +56,29 @@
       align-items: center;
       justify-content: center;
       border: 1px solid rgba($white, .2);
+      font-size: .8em;
+
+      @include break($min: 750px) {
+        width: auto;
+        padding: 0 12px;
+      }
     }
 
     svg {
       //@include test;
       display: block;
+
+      @include break($min: 750px) {
+        margin-right: 12px;
+      }
     }
 
     span {
       display: none;
+
+      @include break($min: 750px) {
+        display: inline-block;
+      }
     }
   }
 }
