@@ -4,6 +4,8 @@
   //@include test;
   padding: 24px 12px;
   background: $yellow;
+  max-width: 700px;
+  margin: 0 auto;
 
   h1 {
     @include fontsize(1);

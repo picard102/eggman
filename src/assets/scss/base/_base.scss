@@ -94,7 +94,7 @@ a {
 .cta-nav {
   display: flex;
 
-  [class$="-grid"] {
+  [class*="-grid"] {
     //@include test;
     width: 50%;
     position: relative;
@@ -102,7 +102,7 @@ a {
 
 
 
-  [class$="-cta"] {
+  [class*="-cta"] {
     //@include test;
     display: block;
     width: 100%;
@@ -110,20 +110,53 @@ a {
     background: $yellow;
     color: $white;
     text-align: right;
-    background-image: url('assets/img/truck.png');
     cursor: pointer;
+
+    svg {
+      @include size(1em);
+      fill: currentColor;
+    }
+
+    span {
+      font-size: 1.5em;
+      font-weight: $semi;
+      display: inline-block;
+    }
+
+    &.active {
+      span {
+        transform: scale(1.2);
+      }
+    }
   }
 
-  [class$="-content"] {
+  [class*="-content"] {
     //@include test;
     background: $black;
-    height: 100vh;
     z-index: 10;
     width: 200%;
     position: relative;
     display: none;
+    left: 0;
   }
 
+
+  .about-cta {
+    background: $black;
+  }
+
+  .about-content {
+    background: $black;
+  }
+
+  .schedule-cta {
+    background: $yellow;
+  }
+
+  .schedule-content {
+    left: -100%;
+    background: $yellow;
+  }
 
 }
 

@@ -1,12 +1,39 @@
 
+.social-follow {
+  @include test;
+
+  a {
+    @include test;
+    @include linkcolor($yellow, darken);
+  }
+
+  .hashtag {
+    font-size: 2em;
+  }
+
+  svg {
+    @include size(24px);
+    fill: currentColor;
+  }
+
+  .accounts {
+
+    span {
+      display: block;
+    }
+  }
+}
+
+
+
 // scss-lint:disable all
 .social-stream {
   background: $dark-blue;
-  padding: 10px;
+  //padding: 10px;
   display: grid;
   //grid-auto-flow: row dense;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2vw;
+  //grid-gap: 2vw;
 
 
 
@@ -29,18 +56,10 @@
     border: 1px solid $yellow;
     border-top-width: 2px;
     display: inline-block;
-    padding: 12px;
+    //padding: 12px;
     //width: calc(100%/3 - 15px);
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
 
-
-    @include break($max: 1000px) {
-      width: calc(100%/2 - 15px);
-    }
-
-    @include break($max: 700px) {
-      width: calc(100% - 20px);
-    }
 
 
     &.social-twitter {

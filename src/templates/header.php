@@ -24,7 +24,7 @@
   <title><?php wp_title( '|', true, 'right' ); ?></title>
 </head>
 <?php
-$hashtag = isset( get_option( 'eggman_options' )['footer'] ) ? get_option( 'eggman_options' )['footer'] : false;
+$hashtag = isset( get_option( 'eggman_options' )['hashtag'] ) ? get_option( 'eggman_options' )['hashtag'] : false;
 $generalContact = isset( get_option( 'eggman_options' )['general'] ) ? get_option( 'eggman_options' )['general'] : false;
 $cateringContact = isset( get_option( 'eggman_options' )['catering'] ) ? get_option( 'eggman_options' )['catering'] : false;
 $twitter = isset( get_option( 'eggman_options' )['twitter'] ) ? get_option( 'eggman_options' )['twitter'] : false;
@@ -45,4 +45,3 @@ $instagram = isset( get_option( 'eggman_options' )['instagram'] ) ? get_option( 
     <svg><use xlink:href="#logo-type"></use></svg>
   </div>
 </header>
-

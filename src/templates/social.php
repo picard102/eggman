@@ -15,7 +15,25 @@
 <section class='social'>
 
 
+<div class="social-follow">
+ <?php if (!empty($hashtag)) { echo '<span class="hashtag">#'.$hashtag.'</span>'; } ?>
+      <div class="accounts">
+        <span>Follow the EggMan</span>
+        <?php
+          if (!empty($twitter)) {
+            echo '<a href="https://twitter.com/'.$twitter.'"><svg><use xlink:href="#icon-twitter"></use></svg></a>';
+          }
+          if (!empty($facebook)) {
+            echo '<a href="https://www.facebook.com/'.$facebook.'"><svg><use xlink:href="#icon-facebook"></use></svg></a>';
+          }
+          if (!empty($instagram)) {
+            echo '<a href="https://www.instagram.com/'.$instagram.'"><svg><use xlink:href="#icon-instagram"></use></svg></a>';
+          }
+        ?>
+    </div>
 
+
+</div>
 
 
 
@@ -133,12 +151,12 @@ switch ($type) {
       break;
 }
 
-echo '<div class="user-info">';
-echo '<img src="'.$avatar.'"/>';
-echo '<span><strong>@'.$user.'</strong>';
-echo '<small>'.$name.'</small></span>';
-echo $icon;
-echo '</div>';
+// echo '<div class="user-info">';
+// echo '<img src="'.$avatar.'"/>';
+// echo '<span><strong>@'.$user.'</strong>';
+// echo '<small>'.$name.'</small></span>';
+// echo $icon;
+// echo '</div>';
 echo '';
 echo '</li>';
 endforeach;
@@ -153,39 +171,5 @@ echo '</ul>';
 
 
 
-  <div class='wrapper'>
-
-
-<div class="twitter-wrapper">
-<?php //include( "social_twitter.php"); ?>
-</div>
-
-<div class="instagram-wrapper">
-  <?php //include( "social_insta.php"); ?>
-</div>
-
-<div class="twitter-wrapper post">
-</div>
-
-  </div>
-
-  <div class="share">
-    <div class="wrapper">
-      <?php if (!empty($hashtag)) { echo '<span class="hashtag">#'.$hashtag.'</span>'; } ?>
-      <div class="accounts">
-        <span>Follow the EggMan</span>
-        <?php
-          if (!empty($twitter)) {
-            echo '<a href="https://twitter.com/'.$twitter.'"><svg><use xlink:href="#twitter-icon"></use></svg></a>';
-          }
-          if (!empty($facebook)) {
-            echo '<a href="https://www.facebook.com/'.$facebook.'"><svg><use xlink:href="#facebook-icon"></use></svg></a>';
-          }
-          if (!empty($instagram)) {
-            echo '<a href="https://www.instagram.com/'.$instagram.'"><svg><use xlink:href="#instagram-icon"></use></svg></a>';
-          }
-        ?>
-    </div>
-  </div>
 
 </section>
