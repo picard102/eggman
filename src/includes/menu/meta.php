@@ -54,12 +54,6 @@ function items_metaboxes() {
     ) );
 
     $cmb->add_field( array(
-          'name'    => 'SubTitle',
-          'desc'    => '',
-          'id'      => $prefix.'sub',
-          'type'    => 'text'
-    ) );
-    $cmb->add_field( array(
           'name'    => 'Price Regular',
           'desc'    => '',
           'id'      => $prefix.'price_reg',
