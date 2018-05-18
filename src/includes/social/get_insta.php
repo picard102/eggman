@@ -20,9 +20,14 @@ function parseInsta($results) {
   foreach ($results as $insta) {
     $json_url = 'https://www.instagram.com/p/'.$insta->node->shortcode.'/?__a=1';
     $jsonData = json_decode((file_get_contents($json_url)));
+
+    $dt = new DateTime('@'.$insta->node->taken_at_timestamp);
+    $dt->setTimeZone(new DateTimeZone('America/Toronto'));
+
+
     $args = array(
       'id' => $insta->node->id,
-      'time' => $insta->node->taken_at_timestamp,
+      'time' => $dt,
       'text' => $insta->node->edge_media_to_caption->edges['0']->node->text,
       'shortcode' => $insta->node->shortcode,
       'name' => $jsonData->graphql->shortcode_media->owner->full_name,

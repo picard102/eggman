@@ -50,10 +50,10 @@ function addSocial ($type, $args) {
     );
     $post = wp_insert_post( $my_post );
 
-    if (!empty($args['avatar'])) {
-      $image = media_sideload_image($args['avatar'], $post, $desc = '', $return = 'id');
-      update_post_meta($post, 'avatar', $image );
-    }
+    // if (!empty($args['avatar'])) {
+    //   $image = media_sideload_image($args['avatar'], $post, $desc = '', $return = 'id');
+    //   update_post_meta($post, 'avatar', $image );
+    // }
 
     if (!empty($args['shortcode'])) {
       update_post_meta($post, 'shortcode', $args['shortcode'] );

@@ -9,16 +9,19 @@
  * @author   @author_name@  <@author_email@>
  * @version  Release: @package_version@
  * @link     @git_link@
- */
+ */ 
 ?>
 
 <section class='social'>
 
 
 <div class="social-follow">
- <?php if (!empty($hashtag)) { echo '<span class="hashtag">#'.$hashtag.'</span>'; } ?>
+
+  <svg><use xlink:href="#bacon-cross"></use></svg>
+
       <div class="accounts">
-        <span>Follow the EggMan</span>
+        <h1>Follow <br>the EggMan</h1>
+        <?php if (!empty($hashtag)) { echo '<span class="hashtag">#'.$hashtag.'</span>'; } ?>
         <?php
           if (!empty($twitter)) {
             echo '<a href="https://twitter.com/'.$twitter.'"><svg><use xlink:href="#icon-twitter"></use></svg></a>';
@@ -30,6 +33,7 @@
             echo '<a href="https://www.instagram.com/'.$instagram.'"><svg><use xlink:href="#icon-instagram"></use></svg></a>';
           }
         ?>
+        
     </div>
 
 

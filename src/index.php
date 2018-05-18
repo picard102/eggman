@@ -55,9 +55,9 @@ require'templates/social.php';
 // require'templates/contact.php';
 
 // queryInsta($tag);
-//queryInsta('theeggmaninc');
+//queryInsta('thicc');
 //require'templates/social.php';
- //queryTwitter('ebgames');
+//queryTwitter('toronto');
 ?>
 
 <?php

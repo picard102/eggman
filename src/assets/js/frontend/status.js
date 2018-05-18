@@ -13,7 +13,7 @@ function schedule() {
   };
 
   jQuery.post( ajaxurl, request, function(response){
-    //console.log('Schedule: ' + response);
+    console.log('Schedule: ' + response);
     process_status(response);
     process_schedule(response);
   });
@@ -68,7 +68,6 @@ function process_status(data) {
   if (hasData) {
       nextOpen = data.open[0].start * 1000;
       nextClose = data.open[0].end * 1000;
-      nextnextOpen = data.open[1].start * 1000;
       var thisLat = data.open[0].latitude;
       var thisLong = data.open[0].longitude;
       var address = data.open[0].display;
