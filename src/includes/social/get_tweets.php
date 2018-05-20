@@ -32,8 +32,6 @@ function queryTwitterUser($search) {
     $base_info = buildBaseString($url, 'GET', $base_params);
     $url = empty($query) ? $url : $url . "?" . http_build_query($query);
 
-    var_dump($url);
-
     $composite_key = rawurlencode($consumer_secret) . '&' . rawurlencode($oauth_access_token_secret);
     $oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
     $oauth['oauth_signature'] = $oauth_signature;
@@ -79,8 +77,6 @@ function queryTwitter($search) {
     $base_params = empty($query) ? $oauth : array_merge($query,$oauth);
     $base_info = buildBaseString($url, 'GET', $base_params);
     $url = empty($query) ? $url : $url . "?" . http_build_query($query);
-
-    var_dump($url);
 
     $composite_key = rawurlencode($consumer_secret) . '&' . rawurlencode($oauth_access_token_secret);
     $oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));

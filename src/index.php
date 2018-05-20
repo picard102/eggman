@@ -54,11 +54,7 @@ require'templates/social.php';
 ?>
 
 <?php
- //queryInsta($hashtag);
 
- //queryInsta('theeggmaninc');
-// queryTwitter($hashtag);
-// queryTwitterUser('TheEggmanCanada');
 /**
  * Footer Template
  */

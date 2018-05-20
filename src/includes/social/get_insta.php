@@ -40,6 +40,7 @@ function parseInsta($results) {
         $args['media_type'] = 'video';
       }
     }
+    var_dump($args);
     addSocial('instagram', $args);
   }
 
