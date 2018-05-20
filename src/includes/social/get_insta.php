@@ -23,11 +23,9 @@ function parseInsta($results) {
 
     $dt = new DateTime('@'.$insta->node->taken_at_timestamp);
     $dt->setTimeZone(new DateTimeZone('America/Toronto'));
-
-
     $args = array(
       'id' => $insta->node->id,
-      'time' => $dt,
+      'time' => strtotime($dt->format('Y-m-d H:i:s')),
       'text' => $insta->node->edge_media_to_caption->edges['0']->node->text,
       'shortcode' => $insta->node->shortcode,
       'name' => $jsonData->graphql->shortcode_media->owner->full_name,

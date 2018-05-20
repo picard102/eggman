@@ -51,16 +51,14 @@ require'templates/social.php';
 //require'templates/schedule.php';
 // require'templates/catering.php';
 
-// require'templates/media.php';
-// require'templates/contact.php';
-
-// queryInsta($tag);
-//queryInsta('thicc');
-//require'templates/social.php';
-//queryTwitter('toronto');
 ?>
 
 <?php
+ //queryInsta($hashtag);
+
+ //queryInsta('theeggmaninc');
+// queryTwitter($hashtag);
+// queryTwitterUser('TheEggmanCanada');
 /**
  * Footer Template
  */

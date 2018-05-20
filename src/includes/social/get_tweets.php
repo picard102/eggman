@@ -10,11 +10,12 @@
  */
 
 
-function queryTwitter($search) {
+
+function queryTwitterUser($search) {
     $url = "https://api.twitter.com/1.1/search/tweets.json";
     if($search != "")
-        $search = "#".$search;
-    $query = array( 'count' => 1000, 'q' => urlencode($search).' -filter:retweets -from:podcamptoronto', "result_type" => "recent", "tweet_mode" => "extended",);
+        $search = $search;
+    $query = array( 'count' => 10, 'q' => urlencode($search).' -filter:retweets -filter:replies ', "result_type" => "recent", "tweet_mode" => "extended",);
     $consumer_key = cmb2_get_option('eggman_options', 'twitterconsumerkey');
     $consumer_secret = cmb2_get_option('eggman_options', 'twitterconsumersecret');
     $oauth_access_token = cmb2_get_option('eggman_options', 'twitteraccesstoken');
@@ -30,6 +31,56 @@ function queryTwitter($search) {
     $base_params = empty($query) ? $oauth : array_merge($query,$oauth);
     $base_info = buildBaseString($url, 'GET', $base_params);
     $url = empty($query) ? $url : $url . "?" . http_build_query($query);
+
+    var_dump($url);
+
+    $composite_key = rawurlencode($consumer_secret) . '&' . rawurlencode($oauth_access_token_secret);
+    $oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
+    $oauth['oauth_signature'] = $oauth_signature;
+
+    $header = array(buildAuthorizationHeader($oauth), 'Expect:');
+    $options = array( CURLOPT_HTTPHEADER => $header,
+                      CURLOPT_HEADER => false,
+                      CURLOPT_URL => $url,
+                      CURLOPT_RETURNTRANSFER => true,
+                      CURLOPT_SSL_VERIFYPEER => false);
+
+    $feed = curl_init();
+    curl_setopt_array($feed, $options);
+    $json = curl_exec($feed);
+    curl_close($feed);
+    parseTwitter(json_decode($json));
+}
+
+
+
+
+
+
+
+
+function queryTwitter($search) {
+    $url = "https://api.twitter.com/1.1/search/tweets.json";
+    if($search != "")
+        $search = "#".$search;
+    $query = array( 'count' => 10, 'q' => urlencode($search).' -filter:retweets -filter:replies -from:TheEggmanCanada', "result_type" => "recent", "tweet_mode" => "extended",);
+    $consumer_key = cmb2_get_option('eggman_options', 'twitterconsumerkey');
+    $consumer_secret = cmb2_get_option('eggman_options', 'twitterconsumersecret');
+    $oauth_access_token = cmb2_get_option('eggman_options', 'twitteraccesstoken');
+    $oauth_access_token_secret = cmb2_get_option('eggman_options', 'twitteraccesstokensecret');
+    $oauth = array(
+      'oauth_consumer_key' => $consumer_key,
+      'oauth_nonce' => time(),
+      'oauth_signature_method' => 'HMAC-SHA1',
+      'oauth_token' => $oauth_access_token,
+      'oauth_timestamp' => time(),
+      'oauth_version' => '1.0');
+
+    $base_params = empty($query) ? $oauth : array_merge($query,$oauth);
+    $base_info = buildBaseString($url, 'GET', $base_params);
+    $url = empty($query) ? $url : $url . "?" . http_build_query($query);
+
+    var_dump($url);
 
     $composite_key = rawurlencode($consumer_secret) . '&' . rawurlencode($oauth_access_token_secret);
     $oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
@@ -52,9 +103,13 @@ function queryTwitter($search) {
 
 function parseTwitter ($results) {
   foreach ($results->statuses as $tweet) {
+
+    $dt = new DateTime('@'.strtotime($tweet->created_at));
+    $dt->setTimeZone(new DateTimeZone('America/Toronto'));
+
     $args = array(
       'id' => $tweet->id_str,
-      'time' => strtotime($tweet->created_at),
+      'time' => strtotime($dt->format('Y-m-d H:i:s')),
       'text' => $tweet->full_text,
       'name' => $tweet->user->name,
       'user' => $tweet->user->screen_name,
@@ -75,6 +130,8 @@ function parseTwitter ($results) {
         $args['quote']['media_type'] = $tweet->quoted_status->entities->media['0']->type;
       }
     }
+
+var_dump($args);
     addSocial('twitter', $args);
   }
 }

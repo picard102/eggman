@@ -20,6 +20,8 @@ function addSocial ($type, $args) {
   require_once(ABSPATH . 'wp-admin/includes/image.php');
   $checkarg = array(
     'post_type' => 'social',
+    'post_status' => array('publish', 'pending', 'draft', 'auto-draft', 'future', 'private', 'inherit', 'trash'),
+
     'meta_query' => array(
        array(
            'key' => 'id',
@@ -31,9 +33,7 @@ function addSocial ($type, $args) {
   $query = new WP_Query($checkarg);
   $count = $query->post_count;
   if ($count === 0) {
-    // echo "<pre>";
-    // var_dump($args);
-    // echo "</pre><hr>";
+
     $my_post = array(
       'post_type' => 'social',
       'post_title'    => wp_strip_all_tags(  substr($args['text'], 0, 63) ),
@@ -48,12 +48,8 @@ function addSocial ($type, $args) {
         'type' => $type,
       ),
     );
-    $post = wp_insert_post( $my_post );
 
-    // if (!empty($args['avatar'])) {
-    //   $image = media_sideload_image($args['avatar'], $post, $desc = '', $return = 'id');
-    //   update_post_meta($post, 'avatar', $image );
-    // }
+    $post = wp_insert_post( $my_post );
 
     if (!empty($args['shortcode'])) {
       update_post_meta($post, 'shortcode', $args['shortcode'] );

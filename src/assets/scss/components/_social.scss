@@ -1,10 +1,19 @@
+.social {
+  padding: 12px;
+  display: flex;
+}
+
 
 .social-follow {
   //@include test;
-  padding: 48px 5vw;
+  padding: 48px;
   background: $orange;
   color: $white;
   display: inline-block;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   a {
     @include linkcolor($white, darken);
@@ -18,14 +27,15 @@
 
   h1 {
     font-size: 2em;
-    margin: 10vh 0 0;
+    margin: 24px 0 0;
     text-transform: uppercase;
     letter-spacing: .15em;
+    line-height: 1em;
   }
 
   .hashtag {
     //font-size: 1.5em;
-    margin: 6px 0 10vh;
+    margin: 6px 0 24px;
   }
 
   svg {
@@ -35,6 +45,7 @@
   }
 
   .accounts {
+    margin-top: 24px;
 
     span {
       display: block;
@@ -44,183 +55,88 @@
 
 
 
-// scss-lint:disable all
+.social-posts {
+  //@include test;
+  //overflow: hidden;
+}
+
+
+
+
+
 .social-stream {
   @include listreset;
-  background: $dark-blue;
-  //padding: 10px;
+  padding-left: 12px;
   display: inline-grid;
   grid-auto-flow: row dense;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(20, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 12px;
-
-
-
 
   a {
     @include linkcolor($black, lighten);
     text-decoration: none;
-    font-weight: $book;
+    object-fit: cover;
   }
 
-  p {
-    font-weight: $semi;
+  img {
+    object-fit: cover;
+    display: block;
   }
 
+  svg {
+    @include size(18px);
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    fill: $white;
+  }
 
-// scss-lint:enable all
   li {
     //@include test;
-    background: $white;
-    border: 1px solid $yellow;
-    border-top-width: 2px;
-    display: inline-block;
-    //padding: 12px;
-    //width: calc(100%/3 - 15px);
-    //margin-bottom: 10px;
+    position: relative;
+    border: 1px solid rgba($light-blue, .2);
 
 
 
-    &.social-twitter {
-      border-top-color: $twitter;
+    &:nth-of-type(3) {
+      grid-row: span 2;
+      grid-column: span 2;
+    }
+
+    &.social-twitter-large {
+      //@include test;
+      grid-column: span 4;
+      font-size: .95em;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      grid-column: span 2;
 
-      .img_wrap {
-        width: 30%;
+      &.media {
+        p {
+          width: calc(100% - 24% - 24px);
+          margin-left: 12px;
+        }
       }
 
       p {
-        width: calc(100% - 30% - 12px);
+        margin-left: 12px;
+        margin-right: 12px;
+        display: block;
+        width: 100%;
+
+        &:not(:last-of-type) {
+          margin-bottom: 0;
+        }
+      }
+
+      .img_wrap {
+        width: 23%;
       }
 
       svg {
         fill: $twitter;
       }
-
-      .user-info img {
-        border-radius: 100%;
-      }
-    }
-
-    &.social-instagram {
-      border-top-color: $instagram;
-
-      @include break($max: 700px) {
-        &:nth-of-type(3) {
-          display: block !important;
-        }
-      }
-
-
-      svg {
-        fill: $instagram;
-      }
-
-      .user-info img {
-        border-radius: 100%;
-      }
     }
   }
-
-  .img_wrap {
-    position: relative;
-    display: block;
-
-    svg {
-      @include alignment(absolute, center);
-      @include size(50%);
-      fill: $white;
-    }
-  }
-
-  .media {
-    width: 100%;
-    display: block;
-  }
-
-  .network {
-    margin-left: auto;
-
-    svg {
-      @include size(24px);
-    }
-  }
-
-  .user-info {
-    display: flex;
-    padding-top: 6px;
-    font-size: .8em;
-    width: 100%;
-
-    img {
-      @include size(32px);
-      flex: 0 0 auto;
-    }
-
-    span {
-      padding: 0 12px;
-    }
-
-    strong,
-    small {
-      display: block;
-    }
-  }
-
-}
-
-.tweet-quote {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: start;
-  border: 1px solid $yellow;
-  padding: 12px;
-  font-size: .8em;
-  margin: 6px;
-  opacity: .8;
-  margin-top: 12px;
-
-  .quote-user {
-    font-weight: $semi;
-  }
-
-  .image {
-    order: 0;
-    flex: 1 1 250px;
-    align-self: auto;
-    margin-right: 12px;
-  }
-
-  span {
-    flex: 1 1 auto;
-    order: 0;
-    flex: 3 1 auto;
-    align-self: auto;
-  }
-}
-
-.discover-more {
-  //@include test;
-  text-align: center;
-  margin-top: calc(-100px - 5vh);
-  position: relative;
-  z-index: 100;
-  background: linear-gradient(to top, rgba($white, 1) 1%, rgba($white, 1) 50%, rgba($white, 0) 100%);
-
-  a {
-    @include linkcolor($white);
-    text-decoration: none;
-    display: block;
-    background: $red;
-    padding: 24px;
-    border-radius: 5px;
-  }
-
 }
