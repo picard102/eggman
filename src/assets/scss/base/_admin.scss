@@ -2,7 +2,8 @@
 .wp-list-table {
 
   .image,
-  .image2 {
+  .image2,
+  .images {
 
     img {
       max-width: 100%;
@@ -14,4 +15,16 @@
     width: 50px;
     text-align: center;
   }
+
+  .column-images,
+  .column-service {
+    width: 100px;
+    text-align: center;
+
+    svg {
+      @include size(24px);
+      fill: currentColor;
+    }
+  }
+
 }
