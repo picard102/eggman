@@ -8,6 +8,18 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .social-follow {
   //@include test;
   padding: 48px;
@@ -20,47 +32,42 @@
   flex-direction: column;
 
   @include break($max: 750px) {
-    padding: 24px;
+    padding: 24px 12px;
     padding-bottom: 132px;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: start;
-
-    span {
-      margin-left: 24px;
-      width: calc(100% - 32px - 32px);
-    }
   }
 
-  @include break($max: 450px) {
-    span {
-      margin-left: 0;
-      margin-top: 12px;
-      width: 100%;
+  @include break($max: 600px) {
+    justify-content: start;
+  }
+
+
+
+  span {
+    //@include test;
+
+    @include break($max: 750px) {
+      margin-left: 12px;
     }
   }
 
   a {
+    //@include test;
     @include linkcolor($white, darken);
     display: inline-block;
-    margin-right: 12px;
+    padding: 12px;
+    background: shade($orange, 5%);
 
-    @include break($max: 750px) {
-      padding: 12px;
-      margin-right: 12px !important;
-      background: shade($orange, 5%);
+    &:not(:last-of-type) {
+      margin-right: 12px;
     }
-
-    &:nth-of-type(2) {
-      margin-right: 24px;
-    }
-
-
   }
 
   h1 {
+    //@include test;
     font-size: 2em;
-    margin: 24px 0 0;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: .15em;
     line-height: 1em;
@@ -69,22 +76,16 @@
       font-size: 1.5em;
     }
 
-    @include break($max: 750px, $min: 450px) {
-      margin-top: 0;
-      font-size: 1.6em;
-
-      br {
-        display: none;
-      }
-    }
   }
 
   .hashtag {
+    //@include test;
     //font-size: 1.5em;
     margin: 6px 0 24px;
   }
 
   svg {
+    //@include test;
     @include size(32px);
     display: block;
     fill: currentColor;
@@ -95,23 +96,39 @@
   }
 
   .accounts {
+    //@include test;
     margin-top: 24px;
 
     @include break($max: 750px) {
+      margin-left: auto;
+    }
+
+
+    @include break($max: 600px) {
       width: 100%;
+      margin-top: 12px;
+      margin-left: 42px;
     }
 
     @include break($max: 450px) {
-      text-align: right;
-      position: relative;
-      right: -24px;
-    }
-
-    span {
-      display: block;
+      margin-left: 32px;
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

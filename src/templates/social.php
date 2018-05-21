@@ -49,34 +49,36 @@
 
 
 <div class="social-posts">
-
-
-
-
+<ul class="social-stream" id="social-stream">
 <?php
-
-
-
-
-
-echo '<ul class="social-stream" id="social-stream">';
 $args = array(
   'post_type' => 'social',
   'posts_per_page'  =>  5,
    'meta_query' => array(
-        array(
-          'key'     => 'media_image',
-          'compare' => 'EXISTS',
-        )
+      array(
+        'key'     => 'media_image',
+        'compare' => 'EXISTS',
       )
+    )
 );
 $social = get_posts( $args );
 foreach ( $social as $post ) : setup_postdata( $post );
+
+
   $type = get_post_meta( $post->ID, 'type', true );
   $id = get_post_meta( $post->ID, 'id', true );
   $shortcode = get_post_meta( $post->ID, 'shortcode', true );
   $media_img = get_post_meta( $post->ID, 'media_image', true );
   $media_type = get_post_meta( $post->ID, 'media_type', true );
+
+  switch ($type) {
+  case 'twitter':
+   $link = 'https://twitter.com/statuses/'.$id;
+  break;
+  case 'instagram':
+   $link = 'https://instagram.com/p/'.$shortcode;
+  break;
+  }
   $button = '';
   echo '<li class="social-item social-'.$type.' ">';
   if (isset($media_type) && !empty($media_type)) {
@@ -87,9 +89,9 @@ foreach ( $social as $post ) : setup_postdata( $post );
   if (isset($media_img) && !empty($media_img)) {
     $media_img = wp_get_attachment_image_src($media_img, 'menu_large', true );
     $media_img = $media_img[0];
-    echo '<a href="https://instagram.com/p/'.$shortcode.'" class="img_wrap"  target="_blank">'.$button.'<img class="media" src="'.$media_img.'"/></a>';
+    echo '<a href="'.$link.'" class="img_wrap"  target="_blank">'.$button.'<img class="media" src="'.$media_img.'"/></a>';
   }
-  $icon = '<div class="network"><a href="https://instagram.com/p/'.$shortcode.'" target="_blank"><svg><use xlink:href="#icon-'.$type.'"></use></svg></a></div>';
+  $icon = '<div class="network"><a href="'.$link.'" target="_blank"><svg><use xlink:href="#icon-'.$type.'"></use></svg></a></div>';
 echo $icon;
 echo '</li>';
 endforeach;
