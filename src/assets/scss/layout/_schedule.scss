@@ -1,23 +1,35 @@
 
 
 .schedule {
-  //@include test;
+  @include test;
   padding: 24px 12px;
   background: $yellow;
-  max-width: 700px;
+  //max-width: 700px;
   margin: 0 auto;
 
+
+  span {
+    @include test;
+    display: block;
+
+    @include break($min: 750px) {
+      display: inline-block;
+    }
+
+  }
+
   h1 {
-    @include fontsize(1);
+    @include fontsize(2);
     line-height: 1;
     margin: 0;
     margin-top: 12px;
     text-align: center;
     color: $white;
+    font-weight: $semi;
   }
 
   small {
-    font-size: .6em;
+    font-size: .7em;
     margin-bottom: 12px;
     text-align: center;
     display: block;
@@ -26,10 +38,15 @@
   }
 
   dl {
-    //@include test;
+    @include test;
     @include listreset;
     margin-bottom: 12px;
     margin-top: 12px;
+
+
+    @include break($min: 750px) {
+      display: inline-block;
+    }
   }
 
   dt {

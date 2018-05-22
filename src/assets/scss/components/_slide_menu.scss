@@ -152,7 +152,7 @@
     @include fontsize(1);
     display: block;
     text-align: left;
-    color: $light-blue;
+    color: $white;
     margin-bottom: 0;
   }
 
@@ -161,10 +161,8 @@
 
   .wrap {
     //@include test;
-    background: $yellow;
-
-    color: $light-blue;
-
+    background: $orange;
+    color: $white;
 
     @include break($min: 750px) {
       display: flex;
