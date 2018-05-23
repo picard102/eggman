@@ -1,15 +1,21 @@
 
 
 .schedule {
-  @include test;
+  //@include test;
   padding: 24px 12px;
-  background: $yellow;
+  //background: $yellow;
   //max-width: 700px;
   margin: 0 auto;
 
+  @include break($min: 750px) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
-  span {
-    @include test;
+
+  .schedule-header {
+    //@include test;
     display: block;
 
     @include break($min: 750px) {
@@ -24,7 +30,7 @@
     margin: 0;
     margin-top: 12px;
     text-align: center;
-    color: $white;
+    color: $orange;
     font-weight: $semi;
   }
 
@@ -34,11 +40,11 @@
     text-align: center;
     display: block;
     letter-spacing: .08em;
-    color: $white;
+    color: $orange;
   }
 
   dl {
-    @include test;
+    //@include test;
     @include listreset;
     margin-bottom: 12px;
     margin-top: 12px;
@@ -46,6 +52,7 @@
 
     @include break($min: 750px) {
       display: inline-block;
+      width: 50%;
     }
   }
 
@@ -77,6 +84,11 @@
     border: 1px solid $light-blue;
     position: relative;
     padding-right: calc(44px + 12px + 12px);
+
+    @include break($min: 750px) {
+      padding-right: calc(44px + 12px + 12px + 100px);
+    }
+
   }
 
   .sameday {

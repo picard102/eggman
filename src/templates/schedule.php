@@ -2,7 +2,7 @@
 <section class='schedule'>
 
 
-  <span>
+  <span class="schedule-header">
     <h1> Schedule </h1>
     <small>Subject to Weather</small>
   </span>
