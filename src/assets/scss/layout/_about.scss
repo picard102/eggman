@@ -1,250 +1,60 @@
 
 .about {
-  color: $white;
-  overflow: hidden;
+  //@include test;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh auto 1vh;
 
-  img {
-    display: none;
+  .chef {
+    //@include test;
+    width: 40%;
+    order: 2;
+    position: relative;
+    left: -50px;
   }
+
+  .bio {
+    //@include test;
+    width: 40%;
+    z-index: 10;
+    position: relative;
+    right: -50px;
+
+  }
+
+
 
   h1 {
+    @include fontsize(3);
     font-family: $header;
-    font-size: 44px;
-    color: $white;
-    margin: 48px 24px 0;
+    color: $orange;
     text-transform: uppercase;
-    font-weight: $book;
+    font-weight: $heavy;
     line-height: 1em;
-    text-align: center;
-    border-top: 1px solid tint($red, 10%);
-    padding-top: 24px;
-  }
-
-  h2 {
-    font-family: $header;
-    font-size: 34px;
-    color: $white;
+    white-space: nowrap;
     margin: 0;
-    text-transform: uppercase;
-    font-weight: $book;
-    border-top: 1px solid tint($red, 10%);
-    padding-top: 18px;
-
-    @include breakpoint($sm-only) {
-      font-size: 24px;
-    }
-
-    @include breakpoint($xs) {
-      font-size: 24px;
-    }
 
     svg {
-      @include size(35px);
+      @include size(.9em);
+      margin-right: -.08em;
       fill: currentColor;
-      margin-left: 12px;
-      vertical-align: bottom;
     }
   }
 
-  .grid {
-    //@include test;
-    @include align-items(stretch);
-    @include display(flex);
-    @include flex-direction(row);
-    @include justify-content(flex-start);
-  }
-
-  .about-column {
-    @include calc(width, '100% / 3');
-    position: relative;
-    font-size: 18px;
-    color: $white;
-    padding: 24px;
-
-    &::after {
-      z-index: -1;
-      content: '';
-      position: absolute;
-      bottom: 0;
-      height: 300%;
-      width: 300%;
-    }
-
-    &:nth-child(1)::after {
-      right: 0;
-    }
-
-    &:nth-child(2)::after {
-      left: 0;
-      right: 0;
-    }
-
-    &:nth-child(3)::after {
-      left: 0;
-    }
-
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i})::after {
-        background-color: shade($red, 5% * $i);
-      }
-    }
-
-  }
-
-}
-
-
-
-.team {
-  //@include test;
-  background-image: url('img/raster/compressed/cater-bg.jpg');
-
-  .wrapper {
-    position: relative;
-    padding: 70px 24px 50px;
-  }
-
-
-
-  .meet {
-    @extend %pill;
-    @extend %red-pill;
-    padding: .6em 3em;
-    display: inline-block;
-    text-align: center;
-    font-size: 14px;
-    margin: 24px auto;
-  }
-
-  .pre_target {
-    h1 {
-      @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
-      font-family: $header;
-      font-size: 62px;
-      color: $white;
-      margin: 0;
-      opacity: .8;
-      text-transform: uppercase;
-      margin-top: -.1em;
-      font-weight: $book;
-      line-height: .9em;
-
-      @include breakpoint($sm-only) {
-        font-size: 40px;
-      }
-
-      @include breakpoint($xs) {
-        font-size: 32px;
-      }
-    }
-
-    img {
-      width: 20%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      z-index: 10;
-
-      @include breakpoint($sm-down) {
-        display: none;
-      }
-    }
-
-    .col_2 {
-      //@include test;
-      width: 60%;
-      margin-left: 30%;
-      margin-right: 10%;
-      font-size: 18px;
-      color: $white;
-
-      @include breakpoint($sm-down) {
-        width: 100%;
-        margin: 0;
-      }
-    }
-
-  } // Pre Target
-}
-
-.team_target {
-  //@include transition (all .2s ease-in-out);
-  display: none;
-  overflow: hidden;
-}
-
-.staff_single {
-  //@include test;
-  margin: 0 auto;
-  max-width: 800px;
-
-  padding: 12px;
-  border: 1px solid $black;
-  background-color: rgba($black, .7);
-
-  &:not(:first-of-type) {
-    margin-top: 48px;
-  }
-
-  .col_1 {
-    //@include test;
-    width: 30%;
-    display: inline-block;
-  }
-
-  .col_2 {
-    //@include test;
-    width: 60%;
-    vertical-align: top;
-    margin-right: 0;
-    margin-left: 24px;
-    display: inline-block;
-    color: $white;
-
-    @include breakpoint($md-down) {
-      margin-left: 12px;
-    }
-  }
-
-  h1 {
-    font-family: $header;
-    font-size: 34px;
-    color: $white;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: $book;
-    padding-top: 6px;
-
-    @include breakpoint($sm-down) {
-      font-size: 24px;
-    }
-  }
-
-  h2 {
-    font-family: $header;
-    font-size: 18px;
-    color: $white;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: $book;
-    padding-top: 6px;
-
-    @include breakpoint($sm-down) {
-      font-size: 14px;
-    }
+  p {
+    margin-right: 100px;
+    line-height: 1.4em;
+    color: $text;
   }
 
   img {
     display: block;
-    margin-bottom: 12px;
-    border: 1px solid $dark-blue;
+    height: auto;
   }
 
 
-  svg {
-    @include size(24px);
-    margin-right: 18px;
-  }
 
 }
 

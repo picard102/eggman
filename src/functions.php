@@ -39,7 +39,7 @@ if ( isset( $_SERVER['SERVER_NAME'] ) ) {
 
   require'includes/admin/theme-options.php';
 
-  require'includes/staff/cpt_staff.php';
+//  require'includes/staff/cpt_staff.php';
   require'includes/press/cpt_press.php';
   require'includes/testimonials/cpt_testimonial.php';
   require'includes/menu/cpt_items.php';

@@ -11,7 +11,6 @@ $border: lighten($grey, 30%);
   @include hyphens(auto);
   word-wrap: break-word;
   font-family: $body-text;
-  font-size: em(14);
   color: $text;
   line-height: em(25);
 

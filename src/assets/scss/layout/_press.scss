@@ -1,139 +1,39 @@
 
 
 .press {
-  @include transition (all .2s ease-in-out);
-  background-image: url('img/raster/compressed/cater-bg.jpg');
-  background-color: shade($dark-blue, 10%);
-  background-size: cover;
-  background-position: top center;
-  color: $white;
-  padding: 50px 0;
+  //@include test;
+  font-size: .9em;
+  max-width: 700px;
+  margin: 5vh 0 10vh auto;
+  color: tint($text, 50%);
+  margin-right: 70px;
 
-  strong {
-    @include prefixer(mask-image, url('img/raster/compressed/text-texture.png'), webkit spec);
-    font-family: $header;
-    font-size: 62px;
-    color: $white;
-    margin: 0;
-    opacity: .8;
-    text-transform: uppercase;
-    margin-top: -.1em;
-    font-weight: $book;
-    line-height: .9em;
-    //text-shadow: 0 -2px 0 $dark-blue;
-
-    @include breakpoint($md-only) {
-      font-size: 50px;
-    }
-
-    @include breakpoint($sm-down) {
-      font-size: 32px;
-    }
-
-
-    i {
-      font-style: normal;
-      font-size: 1.15em;
-    }
-  }
 
   a {
-    @include linkcolor($yellow, darken);
-  }
-
-  span {
-    //@include test;
+    @include linkcolor($orange, darken);
     display: block;
-    margin: 18px 6px;
-  }
-
-  h2 {
-    margin: 0 0 6px;
-    font-size: 18px;
-    display: block;
+    font-size: 1.2em;
   }
 
   ul {
     //@include test;
     @include listreset;
-    @include align-items(stretch);
-    @include display(flex);
-    @include flex-direction(row);
-    @include justify-content(flex-start);
-    @include flex-flow(row-reverse wrap);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
     li {
       //@include test;
-      @include animation(fadeIn 500ms ease-in-out forwards);
-      @include transition (all .2s ease-in-out);
-      font-size: 14px;
-      margin: 6px;
-      opacity: 0;
+      padding: 0;
+      width: 30%;
+      margin: 1.3%;
 
       svg {
-        @include size(10px);
+        @include size(.5em);
         display: inline-block;
         vertical-align: middle;
         fill: currentColor;
       }
-
-      &:not(:first-of-type) {
-        @include calc(width, '(100% - 48px) / 4');
-        display: flex;
-        align-items: center;
-        padding: 0 12px;
-        background-color: rgba($black, .1);
-
-        @include breakpoint($md-only) {
-          @include calc(width, '(100% - 48px) / 3');
-        }
-
-        @include breakpoint($sm-only) {
-          @include calc(width, '(100% - 48px) / 2');
-        }
-
-        @include breakpoint($xs) {
-          width: 100%;
-        }
-
-
-        &:hover {
-          background-color: rgba($dark-blue, .9);
-        }
-
-        &.last {
-          background-color: rgba($red, 0);
-        }
-      }
-
-
-      &:first-of-type {
-        //@include test;
-        @include justify-content(center);
-        width: 48.75%;
-        display: flex;
-        align-items: center;
-        text-align: center;
-
-        @include breakpoint($md-only) {
-          width: 64.75%;
-        }
-
-        @include breakpoint($sm-down) {
-          width: 100%;
-        }
-
-        span {
-          padding: 0;
-        }
-
-        p {
-          font-size: 18px;
-          margin: 6px 0 0;
-        }
-
-      } // First
-
 
     } // li
 

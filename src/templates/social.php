@@ -103,7 +103,13 @@ wp_reset_postdata();
 $args = array(
   'post_type' => 'social',
   'posts_per_page'  =>  1,
-
+  'meta_query' => array(
+      array(
+        'key'     => 'type',
+        'compare' => '=',
+        'value' => 'twitter',
+      )
+    )
 );
 $social = get_posts( $args );
 foreach ( $social as $post ) : setup_postdata( $post );
