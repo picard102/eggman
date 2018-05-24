@@ -5,6 +5,8 @@
 </div>
 <div class="bio">
   <h1>T<svg><use xlink:href="#egg-cross"></use></svg>m is <br>The EggMan</h1>
-  <p>Bacon ipsum dolor amet jerky pork belly pancetta shoulder. Flank short loin short ribs jowl turducken brisket meatball alcatra doner tenderloin pig t-bone ball tip. Meatloaf andouille sausage pork chop fatback. </p>
+  <p> With more than 15 years’ experience as a chef with several of Canada’s leading hotel
+chains, Chef Thomas Januszewski travels all across Toronto, in the highly
+visible Egg Man truck (powered by bacon), serves up eggs in&nbsp;style.</p>
 </div>
 </section>

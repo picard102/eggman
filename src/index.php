@@ -20,10 +20,12 @@ require'templates/header.php';
 include'templates/menu.php';
 require'templates/status.php';
 include'templates/about.php';
+
 include'templates/media.php';
+require'templates/catering.php';
 require'templates/social.php';
 require'templates/schedule.php';
-require'templates/catering.php';
+
 
 ?>
 
