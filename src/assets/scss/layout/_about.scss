@@ -13,6 +13,15 @@
     order: 2;
     position: relative;
     left: -50px;
+
+    &::after {
+      //@include test;
+      @include pattern($yellow);
+      @include position(absolute, 25px -45px -25px 45px);
+      background-size: 324px auto;
+      content: '';
+      z-index: 0;
+    }
   }
 
   .bio {
@@ -52,21 +61,10 @@
   img {
     display: block;
     height: auto;
+    z-index: 1;
+    position: relative;
   }
 
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

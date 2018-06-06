@@ -1,12 +1,14 @@
 
 .catering {
   @include test;
+  @include pattern($yellow);
+  background-size: 324px auto;
   max-width: 800px;
   margin: 10vh auto;
   text-align: center;
   position: relative;
-  background-image: url('assets/img/pattern.png');
-  background-size: 424px auto;
+
+
 
   &::after {
     @include test;
