@@ -16,7 +16,7 @@
 
     &::after {
       //@include test;
-      @include pattern($yellow);
+      @include pattern($orange);
       @include position(absolute, 25px -45px -25px 45px);
       background-size: 324px auto;
       content: '';

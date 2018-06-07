@@ -66,11 +66,12 @@
 
   h1 {
     //@include test;
-    font-size: 2em;
+    font-size: 2.7em;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: .15em;
+    letter-spacing: .1em;
     line-height: 1em;
+    font-family: $header;
 
     @include break($max: 450px) {
       font-size: 1.5em;

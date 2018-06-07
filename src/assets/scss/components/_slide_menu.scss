@@ -149,11 +149,12 @@
 
 
   h1 {
-    @include fontsize(1);
+    @include fontsize(2);
     display: block;
     text-align: left;
     color: $white;
     margin-bottom: 0;
+    font-family: $header;
   }
 
 

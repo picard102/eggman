@@ -16,7 +16,7 @@
  */
 function general_styles() {
   wp_enqueue_style( 'theme_reset', $GLOBALS['template_dir_uri'] . '/style.css', false, '@hash@', 'screen' );
-  wp_enqueue_style( 'fonts_google', 'http://fonts.googleapis.com/css?family=Open+Sans:300,600,400', false, '1.0' );
+  wp_enqueue_style( 'fonts_google', 'http://fonts.googleapis.com/css?family=Oswald:200,300,400,500,700', false, '1.0' );
 }
 add_action( 'wp_enqueue_scripts', 'general_styles' );
 
