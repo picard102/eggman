@@ -1,47 +1,55 @@
 
 .cater-schedule {
   @include test;
-  border: 1px solid $yellow;
+  border: 2px solid $orange;
   position: relative;
   display: block;
-  margin: 0;
+  margin: 8vh auto 0;
   background: $white;
   align-items: center;
-  padding: 24px 12px;
+  padding: 12px;
   position: relative;
   //padding-right: calc(44px + 12px + 12px);
   display: flex;
-
+  z-index: 10;
+  max-width: 700px;
 
   @include break($min: 750px) {
     //padding-right: calc(44px + 12px + 12px + 100px);
   }
 
 
+  p {
+    margin: 0;
+  }
+
   h2 {
     //@include test;
     font-family: $header;
-    font-size: 1.5em;
+    font-size: 1.2em;
     position: relative;
     display: inline-block;
     font-weight: $extra;
     text-align: center;
     text-transform: uppercase;
-    color: $orange;
-    padding: 1.5em .5em;
+    color: $light-blue;
+    //padding: 1.5em .5em;
     line-height: 1.1em;
     border-radius: 100%;
+    margin: 0;
+    margin-right: 2em;
+    margin-left: 1em;
 
     span {
       display: block;
-      font-size: 1.4em;
+      font-size: 1.1em;
       letter-spacing: .03em;
     }
 
     svg {
       //@include test;
       @include alignment(absolute, center);
-      @include size(150%);
+      @include size(250%);
     }
 
   }
@@ -51,6 +59,8 @@
     position: static !important;
     right: 12px;
     bottom: 24px;
+    white-space: nowrap;
+    margin-left: 2em;
 
     a {
       //@include test;

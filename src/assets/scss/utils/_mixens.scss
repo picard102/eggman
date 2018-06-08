@@ -372,6 +372,6 @@ $encoding-reference: (
 @mixin pattern($color:$brand) {
   $pattern: svg-pattern($color);
   background-image: url(svg-encode($pattern));
-  background-size: 10px;
-  background-position: left top;
+  background-size: 324px auto;
+  background-position: center center;
 }

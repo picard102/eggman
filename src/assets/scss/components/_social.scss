@@ -22,8 +22,9 @@
 
 .social-follow {
   //@include test;
+  @include pattern(shade($orange, 10%));
   padding: 48px;
-  background: $orange;
+  background-color: $orange;
   color: $white;
   display: inline-block;
   flex: 0 0 auto;

@@ -21,6 +21,7 @@
       background-size: 324px auto;
       content: '';
       z-index: 0;
+      border: 1px solid tint($black, 95%);
     }
   }
 
@@ -46,7 +47,8 @@
     margin: 0;
 
     svg {
-      @include size(.9em);
+      @include size(.8em);
+      margin-left: -.08em;
       margin-right: -.08em;
       fill: currentColor;
     }

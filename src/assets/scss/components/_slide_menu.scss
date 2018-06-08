@@ -3,6 +3,17 @@
   //@include test;
   //border-bottom: 1px solid $yellow;
 
+  &::after {
+    //@include test;
+    display: block;
+    content: '';
+    max-width: 30%;
+    margin: 0 auto;
+    margin-bottom: 2vh;
+    border-top: 1px solid currentColor;
+    opacity: .2;
+  }
+
   >h1 {
     //@include test;
     @include fontsize(0);
@@ -162,7 +173,9 @@
 
   .wrap {
     //@include test;
-    background: $orange;
+    @include pattern(shade($orange, 10%));
+    background-position: top left;
+    background-color: $orange;
     color: $white;
 
     @include break($min: 750px) {

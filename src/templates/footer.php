@@ -13,7 +13,7 @@
 
 ?>
 <footer id="site_footer" class="site-footer">
-
+<small>© 2018 All rights reserved. Thomas Januszewski </small>
 </footer>
 </div>
 <?php wp_footer(); ?>
