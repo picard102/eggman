@@ -7,12 +7,32 @@
   align-items: center;
   margin: 10vh auto 1vh;
 
+  @include break($max: 600px) {
+    flex-direction: column;
+    padding: 0 24px;
+  }
+
   .chef {
     //@include test;
     width: 40%;
     order: 2;
     position: relative;
     left: -50px;
+
+    @include break($max: 700px) {
+      width: 70%;
+      left: -30px;
+    }
+
+    @include break($max: 600px) {
+      width: 80%;
+      left: 0;
+    }
+
+    @include break($max: 400px) {
+      width: 100%;
+      left: 0;
+    }
 
     &::after {
       //@include test;
@@ -22,6 +42,10 @@
       content: '';
       z-index: 0;
       border: 1px solid tint($black, 95%);
+
+      @include break($max: 400px) {
+        @include position(absolute, -45px -45px -25px -45px);
+      }
     }
   }
 
@@ -32,6 +56,19 @@
     position: relative;
     right: -50px;
 
+    @include break($max: 900px) {
+      width: 55%;
+    }
+
+    @include break($max: 700px) {
+      width: 70%;
+      left: 24px;
+    }
+
+    @include break($max: 600px) {
+      width: 100%;
+      left: 0;
+    }
   }
 
 
@@ -46,6 +83,15 @@
     white-space: nowrap;
     margin: 0;
 
+    @include break($max: 600px) {
+      @include fontsize(2);
+    }
+
+    @include break($max: 450px) {
+      line-height: 1.2em;
+      text-align: center;
+    }
+
     svg {
       @include size(.8em);
       margin-left: -.08em;
@@ -58,6 +104,10 @@
     margin-right: 120px;
     line-height: 1.4em;
     color: $text;
+
+    @include break($max: 600px) {
+      margin-right: 0;
+    }
   }
 
   img {

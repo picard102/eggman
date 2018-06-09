@@ -75,7 +75,8 @@
     font-family: $header;
 
     @include break($max: 450px) {
-      font-size: 1.5em;
+      font-size: 2em;
+      line-height: 1.2em;
     }
 
   }
