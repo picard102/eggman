@@ -179,3 +179,8 @@ a {
 .controls a.maplink {
   @include arrow();
 }
+
+
+.status-bar .controls a.maplink {
+  @include arrow($yellow);
+}

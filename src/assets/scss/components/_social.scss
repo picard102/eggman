@@ -74,6 +74,14 @@
     line-height: 1em;
     font-family: $header;
 
+
+    @include break($min: 750px, $max: 900px) {
+      font-size: 1.5em;
+      line-height: 1.2em;
+      margin-top: 24px;
+    }
+
+
     @include break($max: 450px) {
       font-size: 2em;
       line-height: 1.2em;
@@ -227,6 +235,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      min-height: 100px;
 
       @include break($max: 450px) {
         grid-row: span 2;

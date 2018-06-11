@@ -3,11 +3,20 @@
 .press {
   //@include test;
   font-size: .9em;
-  max-width: 700px;
-  margin: 10vh 0 10vh auto;
   color: tint($text, 10%);
-  margin-right: 70px;
 
+  @include break($min: 850px) {
+    max-width: 700px;
+    margin: 10vh 0 10vh auto;
+    margin-right: 70px;
+  }
+
+  @include break($min: 0, $max: 850px) {
+    max-width: 700px;
+    margin: 48px auto;
+    padding: 0 12px;
+    margin-bottom: 100px;
+  }
 
   a {
     @include linkcolor($dark-blue, darken);
@@ -22,11 +31,20 @@
     flex-wrap: wrap;
     justify-content: flex-end;
 
+
+    @include break($max: 650px) {
+      justify-content: space-between;
+    }
+
     li {
       //@include test;
       padding: 0;
       width: 30%;
       margin: 1.3%;
+
+      @include break($max: 650px) {
+        width: 45%;
+      }
 
       svg {
         @include size(.5em);

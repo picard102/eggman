@@ -14,8 +14,9 @@
   z-index: 10;
   max-width: 700px;
 
-  @include break($min: 750px) {
-    //padding-right: calc(44px + 12px + 12px + 100px);
+  @include break($max: 750px) {
+    margin: 45px auto 0;
+    padding-left: 80px;
   }
 
 
@@ -39,6 +40,13 @@
     margin: 0;
     margin-right: 2em;
     margin-left: 1em;
+
+    @include break($max: 750px) {
+      position: absolute;
+      bottom: 45%;
+      left: -12px;
+      font-size: 1em;
+    }
 
     span {
       display: block;

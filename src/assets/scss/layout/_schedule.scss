@@ -9,15 +9,14 @@
   position: relative;
   z-index: 10;
   padding-bottom: 50px;
-
-  // @include break($min: 750px) {
-  //   display: flex;
-  //   justify-content: space-around;
-  //   align-items: center;
-  // }
-
-
   position: relative;
+
+  @include break($max: 750px) {
+    padding: 24px 12px;
+  }
+
+
+
 
   &::after {
     //@include test;
@@ -62,6 +61,10 @@
     color: $orange;
     max-width: 700px;
     margin: 0 auto;
+
+    @include break($max: 450px) {
+      text-align: center;
+    }
   }
 
   h1 {
@@ -71,6 +74,14 @@
     margin-top: 12px;
     font-weight: $semi;
     font-family: $header;
+
+    @include break($max: 600px) {
+      @include fontsize(2);
+    }
+
+    @include break($max: 450px) {
+      line-height: 1.2em;
+    }
   }
 
   small {
@@ -87,20 +98,13 @@
     margin-bottom: 12px;
     margin-top: 12px;
     max-width: 700px;
-
-
-
-    @include break($min: 750px) {
-      //display: inline-block;
-      //width: 50%;
-    }
   }
 
   dt {
     //@include test;
     font-size: .8em;
     display: inline-block;
-    font-weight: $book;
+    font-weight: $semi;
     position: relative;
     white-space: nowrap;
     margin-left: 12px;
@@ -141,13 +145,6 @@
     margin-right: 12px;
     flex: 0 0 auto;
     width: 100%;
-
-    // span {
-    //   display: block;
-    //   font-size: .8em;
-    //   text-align: center;
-    //   letter-spacing: .08em;
-    // }
   }
 
   .content {
