@@ -1,89 +1,54 @@
 
+.footer-gallery {
+  //@include test;
+  display: inline-grid;
+  grid-auto-flow: row dense;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1px;
+  margin: 48px 12px;
+  position: relative;
 
-
-.site-footer {
-  background-color: shade($dark-blue, 10% * 4);
-  overflow: hidden;
-
-  .wrapper {
+  &::after {
     //@include test;
-    @include justifyed;
-    margin: 20px auto 50px;
+    @include pattern($white);
+    @include position(absolute, 0 0);
+    background-size: 1324px auto;
+    content: '';
+    z-index: 0;
   }
 
-  .logo {
+
+  .image {
     //@include test;
-    @include filter(saturate(0%));
-    height: 60px;
-    width: 100%;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 auto;
-    opacity: .4;
 
-    &:hover {
-      @include filter(saturate(100%));
-      opacity: 1;
+   &:nth-of-type(1) {
+      position: relative;
+      right: 2em;
+      top: 1em;
+    }
+
+
+    &:nth-of-type(2) {
+      position: relative;
+      right: -2em;
+    }
+
+
+    &:nth-of-type(4) {
+      position: relative;
+      left: -2em;
+    }
+
+    &:nth-of-type(3) {
+      grid-row: span 2;
+      grid-column: span 2;
+      position: relative;
+      top: -2em;
     }
   }
 
-
-  .meta {
-    display: inline-block;
-    font-size: 18px;
-    color: $light-blue;
-    width: 48%;
-    vertical-align: middle;
-    padding: 0 24px;
-
-    @include breakpoint($sm-down) {
-      width: 100%;
-      padding: 12px 24px;
-    }
-
-    p {
-      margin: 0;
-    }
-
-  } // meta
-
-
-
-  small {
-    text-align: center;
-    width: 100%;
-    display: inline-block;
-    font-size: 14px;
-    color: $light-blue;
+  img {
+    display: block;
   }
-
-  .line {
-    //@include test;
-    white-space: nowrap;
-    text-align: center;
-    overflow: hidden;
-    margin: 24px 0;
-    display: inline-block;
-    width: 100%;
-
-    &::before,
-    &::after {
-      @include calc(width, '(100% - 25px - 12px) / 2');
-      content: '';
-      display: inline-block;
-      height: 1px;
-      background-color: $light-blue;
-    }
-
-    svg {
-      @include size(25px);
-      margin: 0 12px;
-      fill: $light-blue;
-      vertical-align: middle;
-    }
-
-  }
-
 }
-
-
