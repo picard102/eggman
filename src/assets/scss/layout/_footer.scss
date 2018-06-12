@@ -1,54 +1,96 @@
 
+.site-footer {
+  @include pattern(shade($orange, 10%));
+  background-color: $orange;
+  text-align: center;
+  padding: 5vh 0;
+  color: $white;
+  margin-top: 10vh;
+
+  small {
+    display: block;
+  }
+
+  small + small {
+    margin-top: 12px;
+  }
+
+  a {
+    @include linkcolor($white, darken);
+  }
+}
+
+
+
+
 .footer-gallery {
   //@include test;
   display: inline-grid;
   grid-auto-flow: row dense;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1px;
-  margin: 48px 12px;
+  grid-gap: 0;
+  margin: 0;
   position: relative;
+  //background: $black;
+
+
+  @include break($max: 450px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: inherit;
+    grid-auto-flow: initial;
+  }
 
   &::after {
     //@include test;
     @include pattern($white);
     @include position(absolute, 0 0);
-    background-size: 1324px auto;
+    background-size: 1000px auto;
     content: '';
-    z-index: 0;
+    z-index: 2;
+  }
+
+
+  &::before {
+    //@include test;
+    @include pattern($white);
+    @include position(absolute, 0 0);
+    background-size: 4000px auto;
+    background-position: 10% 50%;
+    content: '';
+    z-index: 1;
   }
 
 
   .image {
     //@include test;
+    position: relative;
 
-   &:nth-of-type(1) {
-      position: relative;
-      right: 2em;
-      top: 1em;
+    @include break($max: 450px) {
+      &:nth-of-type(1),
+      &:nth-of-type(2),
+      &:nth-of-type(6) {
+        display: none;
+      }
+    }
+
+    @include break($min: 450px) {
+      &:nth-of-type(3) {
+        grid-row: span 2;
+        grid-column: span 2;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
     }
 
 
-    &:nth-of-type(2) {
-      position: relative;
-      right: -2em;
-    }
 
-
-    &:nth-of-type(4) {
-      position: relative;
-      left: -2em;
-    }
-
-    &:nth-of-type(3) {
-      grid-row: span 2;
-      grid-column: span 2;
-      position: relative;
-      top: -2em;
-    }
   }
 
   img {
     display: block;
+    object-fit: cover;
   }
 }

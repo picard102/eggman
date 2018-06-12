@@ -13,6 +13,11 @@
 
 ?>
 
+<footer id="site_footer" class="site-footer">
+<small>© 2018 All rights reserved. Thomas Januszewski </small>
+<small>Built By: <a href="http://www.leschinskidesign.com">Leschinski Design</a></small>
+</footer>
+
 <div class="footer-gallery">
 <?php
 $args=array(
@@ -58,9 +63,6 @@ $media_img = wp_get_attachment_image_src($media_img, 'menu_large', true );
 </div>
 
 
-<footer id="site_footer" class="site-footer">
-<small>© 2018 All rights reserved. Thomas Januszewski </small>
-</footer>
 </div>
 <?php wp_footer(); ?>
 </body>
