@@ -20,8 +20,8 @@
   <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php endif; ?>
-  <?php wp_head(); ?>
-  <title><?php wp_title( '|', true, 'right' ); ?></title>
+  <?php wp_head(); ?> 
+  <title><?php echo bloginfo( 'name' ); ?></title>
 </head>
 <?php
 $hashtag = isset( get_option( 'eggman_options' )['hashtag'] ) ? get_option( 'eggman_options' )['hashtag'] : false;

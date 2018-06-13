@@ -89,12 +89,13 @@ function process_status(data) {
 
     if ( (currentTime + 3*3600*1000) > nextOpen && currentTime < nextOpen ) {
       console.log('Soon');
+      document.title = 'Eggman - Open Soon!';
       $('.status').addClass('soon');
       $('.status .content').html('<p>Opening Soon at '+startHour+'</p> <small>'+address+' </small>');
       $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'" class="maplink"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
-
     } else if ( currentTime > nextOpen && currentTime < nextClose ) {
       console.log('Open Now');
+      document.title = 'Eggman - Now Open!';
       $('.status').addClass('open');
       $('.status .content').html('<p>Open Now Till '+endHour+'</p> <small>'+address+' </small>');
       $('.status .controls').prepend('<a href="http://maps.google.com/maps?z=18&q='+ thisLat +',' + thisLong +'" class="maplink"><svg><use xlink:href="#maps-icon"></use></svg><span>View on Google Maps</span></a>');
