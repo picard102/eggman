@@ -1,6 +1,8 @@
 .social {
+  //@include test;
   padding: 12px;
   display: flex;
+  width: 100%;
 
   @include break($max: 750px) {
     flex-direction: column;
@@ -158,24 +160,38 @@
 
 
 .social-stream {
+  //@include test;
   @include listreset;
   padding-left: 12px;
-  display: inline-grid;
-  grid-auto-flow: row dense;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 12px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 100%;
 
-  @include break($max: 450px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: inherit;
-    grid-auto-flow: initial;
+
+  @supports (display: grid) {
+
+    display: inline-grid;
+    grid-auto-flow: row dense;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+
+    @include break($max: 450px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: inherit;
+      grid-auto-flow: initial;
+    }
+
+    @include break($max: 750px) {
+      padding-right: 12px;
+      grid-gap: 6px;
+    }
+
   }
 
-  @include break($max: 750px) {
-    padding-right: 12px;
-    grid-gap: 6px;
-  }
+
+
+
 
   a {
     @include linkcolor($black, lighten);
@@ -208,6 +224,11 @@
     border: 1px solid rgba($light-blue, .2);
     overflow: hidden;
     background: $white;
+    width: 10%;
+
+    @supports (display: grid) {
+      width: auto;
+    }
 
     @include break($max: 450px) {
       &:nth-of-type(4),
