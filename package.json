@@ -1,6 +1,6 @@
 {
   "name": "EGGMAN",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-banner": "^0.6.0",
