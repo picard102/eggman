@@ -14,8 +14,14 @@
 ?>
 
 <footer id="site_footer" class="site-footer">
-<small>© 2018 All rights reserved. Thomas Januszewski </small>
-<small>Built By: <a href="http://www.leschinskidesign.com">Leschinski Design</a></small>
+  <div>
+    <small>© 2018 All rights reserved. Thomas Januszewski </small>
+    <small>Built By: <a href="http://www.leschinskidesign.com">Leschinski Design</a></small>
+  </div>
+  <div class="efo">
+    <span>Proudly Sponsored By</span>
+    <?php include( get_stylesheet_directory() . '/assets/svg/efo.svg' ); ?>
+  </div>
 </footer>
 
 <div class="footer-gallery">

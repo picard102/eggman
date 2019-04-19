@@ -2,10 +2,19 @@
 .site-footer {
   @include pattern(shade($orange, 10%));
   background-color: $orange;
-  text-align: center;
-  padding: 5vh 0;
-  color: $white;
+  text-align: left;
+  padding: 5vh 24px;
+  color: $black;
   margin-top: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include break($max: 600px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
 
   small {
     display: block;
@@ -16,7 +25,31 @@
   }
 
   a {
-    @include linkcolor($white, darken);
+    @include linkcolor($black, lighten);
+  }
+
+
+  .efo {
+    //@include test;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    align-items: flex-end;
+    color: $black;
+
+    @include break($max: 600px) {
+      margin-top: 5vh;
+    }
+
+    span {
+      position: relative;
+      top: 18px;
+    }
+
+    svg {
+      //@include test;
+      height: 70px;
+    }
   }
 }
 
