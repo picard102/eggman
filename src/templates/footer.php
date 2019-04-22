@@ -20,7 +20,9 @@
   </div>
   <div class="efo">
     <span>Proudly Sponsored By</span>
-    <?php include( get_stylesheet_directory() . '/assets/svg/efo.svg' ); ?>
+    <div>
+      <?php include( get_stylesheet_directory() . '/assets/svg/efo.svg' ); ?>
+    </div>
   </div>
 </footer>
 
