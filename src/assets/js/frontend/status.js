@@ -122,6 +122,7 @@ function process_status(data) {
  */
 function process_schedule(data) {
   var hasData = false;
+  var hasLastData = false;
   data = $.parseJSON(data);
 
   if (data == null) {
@@ -133,6 +134,10 @@ function process_schedule(data) {
   if (data.open.length) {
     hasData = true;
   }
+  if (data.last) {
+    hasLastData = true;
+  }
+
 
   if (hasData) {
     var prev;
@@ -173,7 +178,21 @@ function process_schedule(data) {
     }
   } else {
     $('.schedule dl').empty();
-    $('.schedule dl').append('<div class="no-schedule">This weeks schedule will be posted shortly.</div>');
+
+
+  if (hasLastData) {
+      var lastOpen = data.last.time * 1000;
+      var lastlocale = "en-us";
+      var lastWeekday = new Date(lastOpen).toLocaleString(lastlocale, {weekday: "long"});
+      var lhtml = '';
+        lhtml += '<div class="no-schedule">';
+          lhtml += '<div class="content">This weeks schedule will be posted shortly.</div>';
+          lhtml += '<div class="content-last">Last Seen on ' + lastWeekday + ' at '+data.last.display+'</div>';
+          lhtml += '</div>';
+      $('.schedule dl').append(lhtml);
+    } else {
+      $('.schedule dl').append('<div class="no-schedule">This weeks schedule will be posted shortly.</div>');
+    }
   }
 }
 

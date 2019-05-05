@@ -160,9 +160,15 @@
 
   .no-schedule {
     text-align: center;
-    color: $white;
-    max-width: 200px;
+    color: $black;
     margin: 5vh auto;
+    position: relative;
+    z-index: 100;
+    border: 0;
+
+    .content-last {
+      opacity: .5;
+    }
   }
 
 
