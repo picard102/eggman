@@ -83,7 +83,7 @@ function favicon_json () {
             "type": "image/png"
         },
         {
-            "src": "'.get_template_directory_uri().'/assets/favicon/android-chrome-256x256.png",
+            "src": "'.get_template_directory_uri().'/assets/favicon/android-chrome-512x512.png",
             "sizes": "256x256",
             "type": "image/png"
         }
